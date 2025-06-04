@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.31)
+
+# 컴파일러 설정: CLang으로 고정 설정
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_CXX_COMPILER clang++)
+
 project(programmers-c-coding-test-study C CXX)  # C++도 추가 (테스트용)
 
 set(CMAKE_C_STANDARD 11)
