@@ -18,8 +18,11 @@
 
 * CMake 기반 프로젝트
   * **CMake:** 3.31.x
+    * https://github.com/Kitware/CMake
   * **LLVM:** 20.1.x
+    * https://github.com/llvm/llvm-project
   * **Ninja:** 1.12.x
+    * https://github.com/ninja-build/ninja
 * gtest로 단위 테스트
   * [GoogleTest - Google Testing and Mocking Framework](https://github.com/google/googletest)
 
@@ -31,7 +34,7 @@
 > 명령프롬프트에서 할 때는, CMake의 bin이 Path에 설정되어 있어야한다.
 > 나는 Visual Studio 2022 Community도 시스템에 설치되어있다.
 >
-> 그런데... 최종적으로는 LLVM+Clang 사용하게되서 VS2022는 사용하지 않게되었음. 😅
+> 그런데... 최종적으로는 LLVM+Clang 환경으로 사용하게되어서 VS2022는 사용하지 않게되었다. 😅
 
 * 프로젝트 빌드
 
