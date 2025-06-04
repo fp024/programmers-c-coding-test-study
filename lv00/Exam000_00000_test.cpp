@@ -5,9 +5,9 @@ extern "C" {
 void solution(int arr[], int length);
 }
 
-using testing::ElementsAreArray;
+using namespace testing;
 
-class Exam000_00000_Tests : public testing::Test {
+class Exam000_00000_Tests : public Test {
 protected:
     void SetUp() override {
         // 각 테스트 전에 실행

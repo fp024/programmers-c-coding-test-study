@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
 
-# 컴파일러 설정: CLang으로 고정 설정
-set(CMAKE_C_COMPILER clang)
-set(CMAKE_CXX_COMPILER clang++)
-
 project(programmers-c-coding-test-study C CXX)  # C++도 추가 (테스트용)
 
 set(CMAKE_C_STANDARD 11)
@@ -78,17 +74,28 @@ if (BUILD_TESTING)
     message(STATUS "Google Test enabled for testing")
 
     # 테스트 파일 설정 추가를 위한 공통 함수
-    function(add_coding_test LEVEL PROBLEM_ID)
+    function(add_coding_test LEVEL PROBLEM_ID EXTENSION USE_COMMON_LIB_FLAG)
+        # TRUE/FALSE로 직접 전달받아서 사용
+        set(USE_COMMON_LIB ${USE_COMMON_LIB_FLAG})
+
         set(TEST_NAME "lv${LEVEL}_${PROBLEM_ID}")
         set(SOURCE_FILE "${PROBLEM_ID}_test.cpp")
-        set(C_FILE "${PROBLEM_ID}.c")
+        set(C_FILE "${PROBLEM_ID}.${EXTENSION}")
 
         add_executable(${TEST_NAME}_test
                 ${SOURCE_FILE}
                 ${C_FILE}
         )
 
-        target_include_directories(${TEST_NAME}_test PRIVATE ../${COMMON_LIB_PROJECT})
+        # 조건부로 공통 라이브러리 포함
+        if (USE_COMMON_LIB)
+            target_include_directories(${TEST_NAME}_test PRIVATE ../${COMMON_LIB_PROJECT})
+            target_link_libraries(${TEST_NAME}_test
+                    ${COMMON_LIB_NAME}
+            )
+        endif ()
+
+        # 항상 gtest 라이브러리는 링크
         target_link_libraries(${TEST_NAME}_test
                 ${COMMON_LIB_NAME}
                 gtest gtest_main gmock gmock_main

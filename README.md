@@ -31,10 +31,9 @@
 ### gtest 테스트 (아직은 적용하지 못함. 잘 적용할 수 있을까? 😅 => 적용됨 👍)
 
 > CLion 내에서는 테스트 소스 편집화면에서  ▶️ 버튼이 나타나서 그냥 그걸 누르면 알아서 되는데,
-> 명령프롬프트에서 할 때는, CMake의 bin이 Path에 설정되어 있어야한다.
-> 나는 Visual Studio 2022 Community도 시스템에 설치되어있다.
+> 명령프롬프트에서 실행할 때는, CMake, LLVM의 bin 및 Ninja 실행파일 경로가 Path에 설정되어 있어야한다.
+> 나는 Visual Studio 2022 Community도 시스템에 설치 되어있다.
 >
-> 그런데... 최종적으로는 LLVM+Clang 환경으로 사용하게되어서 VS2022는 사용하지 않게되었다. 😅
 
 * 프로젝트 빌드
 
@@ -45,12 +44,10 @@
   cmake ..
   cmake --build .
   ```
-* 빌드할 때 환경을 Clang으로 컴파일러 설정
+* 빌드할 때 환경을 Clang-cl으로 컴파일러 설정
   ```sh
-  cmake -G "Ninja" -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
+  cmake -G "Ninja" -DCMAKE_C_COMPILER=clang-cl -DCMAKE_CXX_COMPILER=clang-cl ..
   ```
-  현재 상태에서는 루트의 CMakeLists.txt에 Clang을 사용하도록 고정해서, 
-  그냥 `cmake ..`만 입력해도 되긴함. 😅
 
 * 전체 테스트 실행 (프로젝트 빌드가 된 상태에서)
 
