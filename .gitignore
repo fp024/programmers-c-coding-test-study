@@ -1,5 +1,6 @@
 .idea/
 .vs/
 out/
+build/
 cmake-build-debug/
 cmake-build-debug-event-trace/

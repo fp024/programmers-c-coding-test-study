@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 project(programmers-c-coding-test-study C CXX)  # C++도 추가 (테스트용)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)  # Google Test용
 
 if (WIN32)
@@ -43,6 +43,11 @@ if (WIN32)
     endif ()
 endif ()
 
+# 공통 함수 모음 라이브러리
+set(COMMON_LIB_PROJECT CommonUtils)
+set(COMMON_LIB_NAME ${COMMON_LIB_PROJECT})
+add_subdirectory(CommonUtils)
+
 # 테스트 빌드 옵션
 option(BUILD_TESTING "Build tests with Google Test" ON)
 
@@ -79,7 +84,6 @@ if (BUILD_TESTING)
         )
 
         target_include_directories(${TEST_NAME}_test PRIVATE ../${COMMON_LIB_PROJECT})
-        target_link_directories(${TEST_NAME}_test PRIVATE ../cmake-build-debug/${COMMON_LIB_PROJECT})
         target_link_libraries(${TEST_NAME}_test
                 ${COMMON_LIB_NAME}
                 gtest gtest_main gmock gmock_main
@@ -89,13 +93,6 @@ if (BUILD_TESTING)
     endfunction()
 
 endif ()
-
-
-# 공통 함수 모음 라이브러리
-set(COMMON_LIB_PROJECT CommonUtils)
-set(COMMON_LIB_NAME ${COMMON_LIB_PROJECT})
-
-add_subdirectory(CommonUtils)
 
 # 전체 테스트 실행을 위한 커스텀 타겟 (테스트가 활성화된 경우에만)
 if (BUILD_TESTING)
