@@ -66,6 +66,28 @@ if (BUILD_TESTING)
     enable_testing()
 
     message(STATUS "Google Test enabled for testing")
+
+    # 테스트 파일 설정 추가를 위한 공통 함수
+    function(add_coding_test LEVEL PROBLEM_ID)
+        set(TEST_NAME "lv${LEVEL}_${PROBLEM_ID}")
+        set(SOURCE_FILE "${PROBLEM_ID}_test.cpp")
+        set(C_FILE "${PROBLEM_ID}.c")
+
+        add_executable(${TEST_NAME}_test
+                ${SOURCE_FILE}
+                ${C_FILE}
+        )
+
+        target_include_directories(${TEST_NAME}_test PRIVATE ../${COMMON_LIB_PROJECT})
+        target_link_directories(${TEST_NAME}_test PRIVATE ../cmake-build-debug/${COMMON_LIB_PROJECT})
+        target_link_libraries(${TEST_NAME}_test
+                ${COMMON_LIB_NAME}
+                gtest gtest_main gmock gmock_main
+        )
+
+        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME}_test)
+    endfunction()
+
 endif ()
 
 
