@@ -14,26 +14,47 @@
 
 
 
-### 스터디 프로젝트  구성
+## 스터디 프로젝트  구성
 
-* CMake 기반 프로젝트
-  * **CMake:** 3.31.x
-    * https://github.com/Kitware/CMake
-  * **LLVM:** 20.1.x
-    * https://github.com/llvm/llvm-project
-  * **Ninja:** 1.12.x
-    * https://github.com/ninja-build/ninja
-* gtest로 단위 테스트
-  * [GoogleTest - Google Testing and Mocking Framework](https://github.com/google/googletest)
+### CMake 기반 프로젝트
+
+* **CMake:** 3.31.x
+  * https://github.com/Kitware/CMake
+* **LLVM:** 20.1.x
+  * https://github.com/llvm/llvm-project
+* **Ninja:** 1.12.x
+  * https://github.com/ninja-build/ninja
+
+
+
+### 개발 도구
+
+* CLion
+  * https://www.jetbrains.com/clion/
+  * **Free for non-commercial use** : 요즘은 CLion도 비상업적용도로는 무료로 사용할 수 있다. 👍
+
+* Visual Stduio 2022 Community
+  * https://visualstudio.microsoft.com/ko/vs/community/
+
+
+
+### 단위 테스트 프레임워크
+
+* GoogleTest - Google Testing and Mocking Framework
+  * https://github.com/google/googletest
+
+
 
 
 
 ### gtest 테스트 (아직은 적용하지 못함. 잘 적용할 수 있을까? 😅 => 적용됨 👍)
 
 > CLion 내에서는 테스트 소스 편집화면에서  ▶️ 버튼이 나타나서 그냥 그걸 누르면 알아서 되는데,
-> 명령프롬프트에서 실행할 때는, CMake, LLVM의 bin 및 Ninja 실행파일 경로가 Path에 설정되어 있어야한다.
-> 나는 Visual Studio 2022 Community도 시스템에 설치 되어있다.
+> 명령프롬프트에서 빌드를 실행할 때, clang-cl을 사용하거나 clang, clang++을 사용하려면, 
 >
+> CMake, LLVM의 bin 및 Ninja 실행파일 경로가 Path에 설정되어 있어야한다.
+>
+> 나는 Visual Studio 2022 Community도 시스템에 설치 되어있다.
 
 * 프로젝트 빌드
 
@@ -41,20 +62,34 @@
   cd {프로젝트 루트}
   # 빌드 디렉토리 생성
   mkdir build
-  cmake ..
+  # 빌드 준비 (기본 환경으로 빌드)
+  cmake .. 
+  # 빌드
   cmake --build .
   ```
-* 빌드할 때 환경을 Clang-cl으로 컴파일러 설정
+  
+* [프로젝트 빌드 설정 - 상세](docs/프로젝트 빌드 설정.md)
+  
+* clang-cl을 사용한 빌드 설정
+  
   ```sh
   cmake -G "Ninja" -DCMAKE_C_COMPILER=clang-cl -DCMAKE_CXX_COMPILER=clang-cl ..
   ```
+  
+* clang, clang++을 사용한 빌드 설정
+
+  ```sh
+  cmake -G "Ninja" -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
+  ```
+
+  
 
 * 전체 테스트 실행 (프로젝트 빌드가 된 상태에서)
 
   ```sh
   # Clang에서는 그냥 ctest로 실행
   ctest
-  # MSVC 환경이라면 Debug 또는 Release를 옵션을 추가해야했다.
+  # MSVC (VS2022) 환경이라면 실행 설정 옵션으로 Debug 또는 Release 둘 중 하나를 선택해야했다.
   ctest -C Debug
   ```
 
@@ -71,7 +106,7 @@
   ```
 
 
-* 특정 테스트 소스 파일의 특정 테스트 메크로 함수만 테스트
+* 특정 테스트 소스 파일 내 특정 테스트 케이스만 실행
   > 💡테스트 파일의 여러 테스트 함수중 특정 함수를 실행하려면 실제 테스트 실행파일을 실행해야하고,
   >
   > `--gtest_filter="*BasicSorting*"` 와 같은 방식으로 필터링 해서 실행할 수 있다.
