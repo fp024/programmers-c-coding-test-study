@@ -9,7 +9,7 @@ using namespace testing;
 // 테스트할 함수 선언
 vector<int> solution(const string &route);
 
-class RouteTest : public Test {
+class Exam001_250129_Tests : public Test {
 protected:
     void SetUp() override {
     }
@@ -19,7 +19,7 @@ protected:
 };
 
 // 기본 테스트 케이스들
-TEST_F(RouteTest, EmptyRoute) {
+TEST_F(Exam001_250129_Tests, EmptyRoute) {
     const vector<int> result = solution("");
     EXPECT_EQ(result[0], 0); // east
     EXPECT_EQ(result[1], 0); // north
@@ -28,7 +28,7 @@ TEST_F(RouteTest, EmptyRoute) {
     EXPECT_THAT(result, ElementsAre(0, 0));
 }
 
-TEST_F(RouteTest, SingleDirection) {
+TEST_F(Exam001_250129_Tests, SingleDirection) {
     // 북쪽으로 한 번
     vector<int> result = solution("N");
     EXPECT_EQ(result[0], 0); // east
@@ -50,7 +50,7 @@ TEST_F(RouteTest, SingleDirection) {
     EXPECT_EQ(result[1], 0); // north
 }
 
-TEST_F(RouteTest, OppositeDirections) {
+TEST_F(Exam001_250129_Tests, OppositeDirections) {
     // 북쪽으로 갔다가 남쪽으로 돌아오기
     vector<int> result = solution("NS");
     EXPECT_EQ(result[0], 0); // east
@@ -62,14 +62,14 @@ TEST_F(RouteTest, OppositeDirections) {
     EXPECT_EQ(result[1], 0); // north
 }
 
-TEST_F(RouteTest, ComplexRoute) {
+TEST_F(Exam001_250129_Tests, ComplexRoute) {
     // 복잡한 경로
     const vector<int> result = solution("NESWNESWNESW");
     EXPECT_EQ(result[0], 0); // east (3E - 3W = 0)
     EXPECT_EQ(result[1], 0); // north (3N - 3S = 0)
 }
 
-TEST_F(RouteTest, SquarePath) {
+TEST_F(Exam001_250129_Tests, SquarePath) {
     // 정사각형 경로 (시계방향)
     vector<int> result = solution("NESW");
     EXPECT_EQ(result[0], 0); // east
@@ -81,20 +81,20 @@ TEST_F(RouteTest, SquarePath) {
     EXPECT_EQ(result[1], 0); // north
 }
 
-TEST_F(RouteTest, LongRoute) {
+TEST_F(Exam001_250129_Tests, LongRoute) {
     // 긴 경로
     const vector<int> result = solution("NNNEEESSSSWWW");
     EXPECT_EQ(result[0], 0); // east (3E - 3W = 0)
     EXPECT_EQ(result[1], -1); // north (3N - 4S = -1)
 }
 
-TEST_F(RouteTest, OnlyEastWest) {
+TEST_F(Exam001_250129_Tests, OnlyEastWest) {
     const vector<int> result = solution("EEEWW");
     EXPECT_EQ(result[0], 1); // east (3E - 2W = 1)
     EXPECT_EQ(result[1], 0); // north
 }
 
-TEST_F(RouteTest, OnlyNorthSouth) {
+TEST_F(Exam001_250129_Tests, OnlyNorthSouth) {
     const vector<int> result = solution("NNNSS");
     EXPECT_EQ(result[0], 0); // east
     EXPECT_EQ(result[1], 1); // north (3N - 2S = 1)

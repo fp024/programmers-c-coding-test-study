@@ -33,7 +33,7 @@
   * https://www.jetbrains.com/clion/
   * **Free for non-commercial use** : 요즘은 CLion도 비상업적용도로는 무료로 사용할 수 있다. 👍
 
-* Visual Stduio 2022 Community
+* Visual Studio 2022 Community
   * https://visualstudio.microsoft.com/ko/vs/community/
 
 
