@@ -73,35 +73,36 @@ if (BUILD_TESTING)
 
     message(STATUS "Google Test enabled for testing")
 
-    # 테스트 파일 설정 추가를 위한 공통 함수
-    function(add_coding_test LEVEL PROBLEM_ID EXTENSION USE_COMMON_LIB_FLAG)
-        # TRUE/FALSE로 직접 전달받아서 사용
-        set(USE_COMMON_LIB ${USE_COMMON_LIB_FLAG})
+    # 테스트 이름 생성 함수
+    function(get_test_target_name LEVEL PROBLEM_ID OUTPUT_VAR)
+        set(${OUTPUT_VAR} "lv${LEVEL}_${PROBLEM_ID}_test" PARENT_SCOPE)
+    endfunction()
 
-        set(TEST_NAME "lv${LEVEL}_${PROBLEM_ID}")
+    # CommonUtils 연결 함수
+    function(link_common_utils LEVEL PROBLEM_ID)
+        get_test_target_name(${LEVEL} ${PROBLEM_ID} TARGET_NAME)
+        target_include_directories(${TARGET_NAME} PRIVATE ../${COMMON_LIB_PROJECT})
+        target_link_libraries(${TARGET_NAME} ${COMMON_LIB_NAME})
+    endfunction()
+
+
+    # 테스트 파일 설정 추가를 위한 공통 함수
+    function(add_coding_test LEVEL PROBLEM_ID EXTENSION)
+        get_test_target_name(${LEVEL} ${PROBLEM_ID} TEST_NAME)
         set(SOURCE_FILE "${PROBLEM_ID}_test.cpp")
         set(C_FILE "${PROBLEM_ID}.${EXTENSION}")
 
-        add_executable(${TEST_NAME}_test
+        add_executable(${TEST_NAME}
                 ${SOURCE_FILE}
                 ${C_FILE}
         )
 
-        # 조건부로 공통 라이브러리 포함
-        if (USE_COMMON_LIB)
-            target_include_directories(${TEST_NAME}_test PRIVATE ../${COMMON_LIB_PROJECT})
-            target_link_libraries(${TEST_NAME}_test
-                    ${COMMON_LIB_NAME}
-            )
-        endif ()
-
-        # 항상 gtest 라이브러리는 링크
-        target_link_libraries(${TEST_NAME}_test
-                ${COMMON_LIB_NAME}
+        # gtest 라이브러리 링크
+        target_link_libraries(${TEST_NAME}
                 gtest gtest_main gmock gmock_main
         )
 
-        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME}_test)
+        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
     endfunction()
 
 endif ()

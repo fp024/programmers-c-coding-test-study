@@ -1,8 +1,11 @@
 # C++ 테스트 (BUILD_TESTING이 ON일 때만)
 if (BUILD_TESTING)
-    add_coding_test(00 Exam000_00000 c TRUE)
-    add_coding_test(00 Exam001_250129 cpp FALSE)
-    add_coding_test(00 Exam002_250130 cpp FALSE)
-    add_coding_test(00 Exam003_250132 cpp FALSE)
-    add_coding_test(00 Exam004_340204 cpp FALSE)
+    add_coding_test(00 Exam000_00000 c)
+    link_common_utils(00 Exam000_00000) # Exam000_00000.c는 CommonUtils를 사용 한다.
+
+    add_coding_test(00 Exam001_250129 cpp)
+    add_coding_test(00 Exam002_250130 cpp)
+    add_coding_test(00 Exam003_250132 cpp)
+    add_coding_test(00 Exam004_340204 cpp)
+    add_coding_test(00 Exam005_250131 cpp)
 endif ()
