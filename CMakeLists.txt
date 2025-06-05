@@ -89,12 +89,12 @@ if (BUILD_TESTING)
     # 테스트 파일 설정 추가를 위한 공통 함수
     function(add_coding_test LEVEL PROBLEM_ID EXTENSION)
         get_test_target_name(${LEVEL} ${PROBLEM_ID} TEST_NAME)
-        set(SOURCE_FILE "${PROBLEM_ID}_test.cpp")
-        set(C_FILE "${PROBLEM_ID}.${EXTENSION}")
+        set(TEST_SOURCE_FILE "${PROBLEM_ID}_test.cpp")
+        set(TARGET_SOURCE_FILE "${PROBLEM_ID}.${EXTENSION}")
 
         add_executable(${TEST_NAME}
-                ${SOURCE_FILE}
-                ${C_FILE}
+                ${TEST_SOURCE_FILE}
+                ${TARGET_SOURCE_FILE}
         )
 
         # gtest 라이브러리 링크
