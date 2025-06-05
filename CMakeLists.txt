@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.31)
 
-project(programmers-c-coding-test-study C CXX)  # C++도 추가 (테스트용)
+project(programmers-c-coding-test-study C CXX)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)  # Google Test용
+set(CMAKE_CXX_STANDARD 17)
 
 if (WIN32)
     # Windows 시스템 로케일 확인을 위한 함수
