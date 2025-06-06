@@ -23,8 +23,8 @@ int func2(const int num) {
 
 int func3(const vector<string> &station) {
     int num = 0;
-    for (int i = 0; i < station.size(); i++) {
-        if (station[i] == "Off") {
+    for (const auto &i: station) {
+        if (i == "Off") {
             num += 1;
         }
     }
@@ -33,8 +33,8 @@ int func3(const vector<string> &station) {
 
 int func4(const vector<string> &station) {
     int num = 0;
-    for (int i = 0; i < station.size(); i++) {
-        if (station[i] == "On") {
+    for (const auto &i: station) {
+        if (i == "On") {
             num += 1;
         }
     }
@@ -43,9 +43,9 @@ int func4(const vector<string> &station) {
 
 int solution(const int seat, const vector<vector<string> > &passengers) {
     int num_passenger = 0;
-    for (int i = 0; i < passengers.size(); i++) {
-        num_passenger += func4(passengers[i]);
-        num_passenger -= func3(passengers[i]);
+    for (const auto &passenger: passengers) {
+        num_passenger += func4(passenger);
+        num_passenger -= func3(passenger);
     }
     const int answer = func1(seat - num_passenger);
     return answer;
@@ -53,7 +53,9 @@ int solution(const int seat, const vector<vector<string> > &passengers) {
 
 //
 // === 문제 읽고 첫 느낌 ===
-// ...
+// * auto가 Java 11 이상의 var와 비슷하다.
+// * 반복문 개선: IDE 권고: 인덱스 기반 반복문을 range-based for로 개선
+//     const auto &i 사용으로 string 복사 없이 참조로 접근하여 성능 향상
 //
 // === 다른 사람 풀이 확인 이후 의견 ===
 // ...
