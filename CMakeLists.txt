@@ -116,5 +116,6 @@ if (BUILD_TESTING)
     )
 endif ()
 
-# 각 레벨별 하위 디렉토리 추가
-add_subdirectory(lv00)
+# 각 레벨별 하위 디렉토리 추가, 빌드가 필요없을 경우 주석으로 둔다.
+# add_subdirectory(lv00)
+add_subdirectory(lv01)
