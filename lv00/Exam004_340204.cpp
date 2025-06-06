@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 4번 / 병과분류
- * https://school.programmers.co.kr/learn/courses/30/lessons/340204
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/340204
  */
 void solution(const string &code) {
     if (const string last_four_words = code.substr(code.size() - 4, 4); last_four_words == "_eye") {

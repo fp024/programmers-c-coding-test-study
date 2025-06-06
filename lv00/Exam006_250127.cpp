@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 7번 / 가습기
- * https://school.programmers.co.kr/learn/courses/30/lessons/250127
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250127
  */
 int func1(const int humidity, const int val_set) {
     if (humidity < val_set)

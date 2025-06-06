@@ -5,7 +5,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 6번 / 가채점
- * https://school.programmers.co.kr/learn/courses/30/lessons/250128
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250128
  */
 vector<string> solution(const vector<int> &numbers, const vector<int> &our_score, const vector<int> &score_list) {
     const size_t num_student = numbers.size();

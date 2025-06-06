@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 2번 / 피타고라스의 정리
- * https://school.programmers.co.kr/learn/courses/30/lessons/250132
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250132
  */
 int solution(const int a, const int c) {
     const int b_square = c * c - a * a;

@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 4번 / 저축
- * https://school.programmers.co.kr/learn/courses/30/lessons/250130
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250130
  */
 int solution(const int start, const int before, const int after) {
     int money = start;

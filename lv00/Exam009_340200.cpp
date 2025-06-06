@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 8번 / 닉네임 규칙
- * https://school.programmers.co.kr/learn/courses/30/lessons/340200
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/340200
  */
 string solution(const string &nickname) {
     string answer;

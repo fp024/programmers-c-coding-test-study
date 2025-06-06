@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 3번 / 수 나누기
- * https://school.programmers.co.kr/learn/courses/30/lessons/340205
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/340205
  */
 int solution() {
     int number;

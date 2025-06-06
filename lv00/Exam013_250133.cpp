@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 1번 / 출력
- * https://school.programmers.co.kr/learn/courses/30/lessons/250133
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250133
  */
 int solution() {
     const string msg = "Spring is beginning";

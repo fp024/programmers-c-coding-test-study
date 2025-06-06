@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 3번 / 나이 계산
- * https://school.programmers.co.kr/learn/courses/30/lessons/250131
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/250131
  */
 int solution() {
     int year, answer = 0;

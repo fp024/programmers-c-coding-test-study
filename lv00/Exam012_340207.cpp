@@ -4,7 +4,7 @@ using namespace std;
 
 /**
  * [PCCE 기출문제] 1번 / 문자 출력
- * https://school.programmers.co.kr/learn/courses/30/lessons/340207
+ *   https://school.programmers.co.kr/learn/courses/30/lessons/340207
  */
 int solution() {
     const string message = "Let's go!";
