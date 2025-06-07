@@ -37,7 +37,6 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
     }
 #endif
 
-
     // 💡 ID별 보낸선물수 Map
     map<string, int> sentCount;
     // 💡 ID별 받은선물수 Map
@@ -49,11 +48,11 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
             receivedCount[receiver] += count;
         }
 
-        // 아예 보내지 않았다면 0으로 초기화해준다.
+        // 선물을 한번도 보내지 않은 ID는 0으로 초기화해준다.
         if (!sentCount.count(id)) {
             sentCount[id] = 0;
         }
-        // 아예 받지 않았다면 0으로 초기화해준다.
+        // 선물을 한번도 받지 않은 ID는 0으로 초기화해준다.
         if (!receivedCount.count(id)) {
             receivedCount[id] = 0;
         }
@@ -78,15 +77,21 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
             const string &person1 = friends[i];
             const string &person2 = friends[j];
             // 직접 주고받은 선물 수
-            const int gifts1to2 = giftSenderReceiversMap[person1][person2];
-            if (const int gifts2to1 = giftSenderReceiversMap[person2][person1]; gifts1to2 > gifts2to1) {
+
+            if (const int gifts1to2 = giftSenderReceiversMap[person1][person2],
+                        gifts2to1 = giftSenderReceiversMap[person2][person1];
+                gifts1to2 > gifts2to1
+            ) {
                 nextMonthGifts[person1]++;
             } else if (gifts2to1 > gifts1to2) {
                 nextMonthGifts[person2]++;
             } else {
                 // 선물 지수로 판단
-                const int index1 = sentCount[person1] - receivedCount[person1];
-                if (const int index2 = sentCount[person2] - receivedCount[person2]; index1 > index2) {
+
+                if (const int index1 = sentCount[person1] - receivedCount[person1],
+                            index2 = sentCount[person2] - receivedCount[person2];
+                    index1 > index2
+                ) {
                     nextMonthGifts[person1]++;
                 } else if (index2 > index1) {
                     nextMonthGifts[person2]++;
