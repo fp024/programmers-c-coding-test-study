@@ -1,0 +1,57 @@
+{
+  // 포멧터 설정
+  "editor.formatOnSave": true,
+  "C_Cpp.clang_format_style": "file",
+  //
+  "C_Cpp.default.compilerPath": "C:/LLVM/20.x/bin/clang++.exe",
+  // CMake 경로 설정
+  "cmake.cmakePath": "C:/CMake/3.x/bin/cmake.exe",
+  "cmake.generator": "Ninja",
+  "cmake.configureSettings": {
+    "CMAKE_MAKE_PROGRAM": "C:/Ninja/1.12.x/ninja.exe"
+  },
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  // 아래 설정들은 C++ TestMate가 설정한 것 같은데.. 일단 둬 보자! 😅
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
+    "textMateRules": [
+      {
+        "scope": "googletest.failed",
+        "settings": {
+          "foreground": "#f00"
+        }
+      },
+      {
+        "scope": "googletest.passed",
+        "settings": {
+          "foreground": "#0f0"
+        }
+      },
+      {
+        "scope": "googletest.run",
+        "settings": {
+          "foreground": "#0f0"
+        }
+      }
+    ]
+  },
+}
