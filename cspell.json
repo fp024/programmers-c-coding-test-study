@@ -1,0 +1,17 @@
+{
+  // https://cspell.org/
+  "version": "0.2",
+  "ignorePaths": [
+    "/cspell.json",
+    "/bin/**",
+    "/build/**",
+    "/.vscode/**",
+    "/.idea/**",
+    "/.gitignore",
+    "/CMakePresets.json",
+    "CMakeLists.txt"
+  ],
+  "words": [],
+  "ignoreWords": [],
+  "import": []
+}
