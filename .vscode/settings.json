@@ -1,6 +1,7 @@
 {
   // 포멧터 설정
   "editor.formatOnSave": true,
+  "C_Cpp.clang_format_path": "C:/LLVM/20.x/bin/clang-format.exe",
   "C_Cpp.clang_format_style": "file",
   // CMake 경로 설정
   "cmake.cmakePath": "C:/CMake/3.x/bin/cmake.exe",
@@ -46,5 +47,9 @@
         }
       }
     ]
+  },
+  "files.associations": {
+    "chrono": "cpp",
+    "functional": "cpp"
   },
 }
