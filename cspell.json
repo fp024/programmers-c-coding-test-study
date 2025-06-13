@@ -11,7 +11,10 @@
     "/CMakePresets.json",
     "CMakeLists.txt"
   ],
-  "words": [],
+  "words": [
+    "gtest",
+    "PCCE"
+  ],
   "ignoreWords": [],
   "import": []
 }
