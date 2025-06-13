@@ -10,17 +10,13 @@ void solution(const string& code) {
     if (const string last_four_words = code.substr(code.size() - 4, 4); //
         last_four_words == "_eye") {
         cout << "Ophthalmologyc";
-    }
-    else if (last_four_words == "head") {
+    } else if (last_four_words == "head") {
         cout << "Neurosurgery";
-    }
-    else if (last_four_words == "infl") {
+    } else if (last_four_words == "infl") {
         cout << "Orthopedics";
-    }
-    else if (last_four_words == "skin") {
+    } else if (last_four_words == "skin") {
         cout << "Dermatology";
-    }
-    else {
+    } else {
         cout << "direct recommendation";
     }
 }
