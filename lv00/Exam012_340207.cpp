@@ -7,12 +7,12 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340207
  */
 int solution() {
-    const string message = "Let's go!";
+  const string message = "Let's go!";
 
-    cout << "3\n2\n1" << endl;
-    cout << message << endl;
+  cout << "3\n2\n1" << endl;
+  cout << message << endl;
 
-    return 0;
+  return 0;
 }
 
 //

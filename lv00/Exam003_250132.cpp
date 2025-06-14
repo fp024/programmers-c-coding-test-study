@@ -7,8 +7,8 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250132
  */
 int solution(const int a, const int c) {
-    const int b_square = c * c - a * a;
-    return b_square;
+  const int b_square = c * c - a * a;
+  return b_square;
 }
 
 //

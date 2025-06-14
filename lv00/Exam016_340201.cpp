@@ -1,5 +1,5 @@
-#include <vector>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -8,47 +8,47 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340201
  */
 int func1(const int num) {
-    if (0 > num) {
-        return 0;
-    }
-    return num;
+  if (0 > num) {
+    return 0;
+  }
+  return num;
 }
 
 int func2(const int num) {
-    if (num > 0) {
-        return 0;
-    }
-    return num;
+  if (num > 0) {
+    return 0;
+  }
+  return num;
 }
 
 int func3(const vector<string> &station) {
-    int num = 0;
-    for (const auto &i: station) {
-        if (i == "Off") {
-            num += 1;
-        }
+  int num = 0;
+  for (const auto &i : station) {
+    if (i == "Off") {
+      num += 1;
     }
-    return num;
+  }
+  return num;
 }
 
 int func4(const vector<string> &station) {
-    int num = 0;
-    for (const auto &i: station) {
-        if (i == "On") {
-            num += 1;
-        }
+  int num = 0;
+  for (const auto &i : station) {
+    if (i == "On") {
+      num += 1;
     }
-    return num;
+  }
+  return num;
 }
 
 int solution(const int seat, const vector<vector<string> > &passengers) {
-    int num_passenger = 0;
-    for (const auto &passenger: passengers) {
-        num_passenger += func4(passenger);
-        num_passenger -= func3(passenger);
-    }
-    const int answer = func1(seat - num_passenger);
-    return answer;
+  int num_passenger = 0;
+  for (const auto &passenger : passengers) {
+    num_passenger += func4(passenger);
+    num_passenger -= func3(passenger);
+  }
+  const int answer = func1(seat - num_passenger);
+  return answer;
 }
 
 //

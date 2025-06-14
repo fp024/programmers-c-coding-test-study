@@ -7,15 +7,15 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250133
  */
 int solution() {
-    const string msg = "Spring is beginning";
-    constexpr int val1 = 3;
-    const string val2 = "3";
+  const string msg = "Spring is beginning";
+  constexpr int val1 = 3;
+  const string val2 = "3";
 
-    cout << msg << endl;
-    cout << val1 + 10 << endl;
-    cout << val2 + "10" << endl;
+  cout << msg << endl;
+  cout << val1 + 10 << endl;
+  cout << val2 + "10" << endl;
 
-    return 0;
+  return 0;
 }
 
 //

@@ -8,28 +8,28 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250129
  */
 vector<int> solution(const string &route) {
-    int east = 0;
-    int north = 0;
-    vector<int> answer(2);
-    for (int i = 0; i < route.length(); i++) {
-        switch (route[i]) {
-            case 'N':
-                north++;
-                break;
-            case 'S':
-                north--; // 💡빈칸 채우기
-                break;
-            case 'E':
-                east++; // 💡빈칸 채우기
-                break;
-            case 'W':
-                east--; // 💡빈칸 채우기
-                break; //  💡빈칸 채우기
-        }
+  int east = 0;
+  int north = 0;
+  vector<int> answer(2);
+  for (int i = 0; i < route.length(); i++) {
+    switch (route[i]) {
+      case 'N':
+        north++;
+        break;
+      case 'S':
+        north--;  // 💡빈칸 채우기
+        break;
+      case 'E':
+        east++;  // 💡빈칸 채우기
+        break;
+      case 'W':
+        east--;  // 💡빈칸 채우기
+        break;   //  💡빈칸 채우기
     }
-    answer[0] = east;
-    answer[1] = north;
-    return answer;
+  }
+  answer[0] = east;
+  answer[1] = north;
+  return answer;
 }
 
 //

@@ -7,18 +7,18 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340205
  */
 int solution() {
-    int number;
-    cin >> number;
+  int number;
+  cin >> number;
 
-    int answer = 0;
+  int answer = 0;
 
-    // 💡: 빈칸 채우기
-    for (int i = 0; i < number; i++) {
-        answer += number % 100;
-        number /= 100;
-    }
-    cout << answer << endl;
-    return 0;
+  // 💡: 빈칸 채우기
+  for (int i = 0; i < number; i++) {
+    answer += number % 100;
+    number /= 100;
+  }
+  cout << answer << endl;
+  return 0;
 }
 
 //

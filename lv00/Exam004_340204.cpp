@@ -7,18 +7,18 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340204
  */
 void solution(const string& code) {
-    if (const string last_four_words = code.substr(code.size() - 4, 4); //
-        last_four_words == "_eye") {
-        cout << "Ophthalmologyc";
-    } else if (last_four_words == "head") {
-        cout << "Neurosurgery";
-    } else if (last_four_words == "infl") {
-        cout << "Orthopedics";
-    } else if (last_four_words == "skin") {
-        cout << "Dermatology";
-    } else {
-        cout << "direct recommendation";
-    }
+  if (const string last_four_words = code.substr(code.size() - 4, 4);  //
+      last_four_words == "_eye") {
+    cout << "Ophthalmologyc";
+  } else if (last_four_words == "head") {
+    cout << "Neurosurgery";
+  } else if (last_four_words == "infl") {
+    cout << "Orthopedics";
+  } else if (last_four_words == "skin") {
+    cout << "Dermatology";
+  } else {
+    cout << "direct recommendation";
+  }
 }
 
 //
@@ -29,8 +29,8 @@ void solution(const string& code) {
 //
 //      testing::internal::CaptureStdout(); // 캡쳐 시작
 //      solution("pat23_08_20_head"); // 솔루션 함수 실행
-//      const string output = testing::internal::GetCapturedStdout(); // 캡쳐 종료, 결과 얻기
-//      EXPECT_EQ(output, "Neurosurgery"); // 결과 확인
+//      const string output = testing::internal::GetCapturedStdout(); // 캡쳐
+//      종료, 결과 얻기 EXPECT_EQ(output, "Neurosurgery"); // 결과 확인
 //
 //   이제 부터는 그냥... 빈칸 표시 주석은 하지말자..😅
 //

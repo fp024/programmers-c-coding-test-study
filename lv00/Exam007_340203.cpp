@@ -8,19 +8,20 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340203
  */
 vector<int> solution(const vector<string> &cpr) {
-    vector answer = {0, 0, 0, 0, 0};
-    const vector<string> basic_order = {"check", "call", "pressure", "respiration", "repeat"};
+  vector answer = {0, 0, 0, 0, 0};
+  const vector<string> basic_order = {"check", "call", "pressure",
+                                      "respiration", "repeat"};
 
-    for (int i = 0; i < cpr.size(); i++) {
-        for (int j = 0; j < basic_order.size(); j++) {
-            if (cpr[i] == basic_order[j]) {
-                answer[i] = j + 1;
-                break;
-            }
-        }
+  for (int i = 0; i < cpr.size(); i++) {
+    for (int j = 0; j < basic_order.size(); j++) {
+      if (cpr[i] == basic_order[j]) {
+        answer[i] = j + 1;
+        break;
+      }
     }
+  }
 
-    return answer;
+  return answer;
 }
 
 //

@@ -7,13 +7,13 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340206
  */
 int solution() {
-    int angle1;
-    int angle2;
-    cin >> angle1 >> angle2;
+  int angle1;
+  int angle2;
+  cin >> angle1 >> angle2;
 
-    const int sum_angle = (angle1 + angle2) % 360;
-    cout << sum_angle << endl;
-    return 0;
+  const int sum_angle = (angle1 + angle2) % 360;
+  cout << sum_angle << endl;
+  return 0;
 }
 
 //
