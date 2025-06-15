@@ -10,7 +10,7 @@ using namespace std;
  */
 
 /** 약수 쌍을 구하는 헬퍼 함수 */
-vector<pair<int, int> > getDivisorPairs(int n);
+vector<pair<int, int>> getDivisorPairs(int n);
 
 /** 문제 해결 함수 */
 vector<int> solution(const int brown, const int yellow) {
@@ -19,7 +19,7 @@ vector<int> solution(const int brown, const int yellow) {
   // (1) 노란색 넓이의 약수의 쌍을 구함:
   //     - 약수 쌍이 결국 가로 x 세로가 될 수 있다.
   //     - yellow 값 자체가 넓이가 될 수 있다.
-  const vector<pair<int, int> > yellowDivisorPairs = getDivisorPairs(yellow);
+  const vector<pair<int, int>> yellowDivisorPairs = getDivisorPairs(yellow);
 
   // (2) 각 약수 쌍에 대해 brown 영역을 고려한 검증
   for (auto &[w_yellow, h_yellow] : yellowDivisorPairs) {
@@ -35,8 +35,8 @@ vector<int> solution(const int brown, const int yellow) {
   return answer;
 }
 
-vector<pair<int, int> > getDivisorPairs(const int n) {
-  vector<pair<int, int> > pairs;
+vector<pair<int, int>> getDivisorPairs(const int n) {
+  vector<pair<int, int>> pairs;
   for (int i = 1; i * i <= n; i++) {
     if (n % i == 0) {
       pairs.emplace_back(n / i, i);
