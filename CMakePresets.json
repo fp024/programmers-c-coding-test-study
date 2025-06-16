@@ -13,7 +13,8 @@
       "description": "LLVM + CLang + Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
       "toolchainFile": "${sourceDir}/toolchains/windows-clang.cmake"
     },
@@ -24,7 +25,8 @@
       "description": "MinGW-w64 + Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
       "toolchainFile": "${sourceDir}/toolchains/mingw.cmake"
     }
