@@ -13,6 +13,7 @@
     "/toolchain.cmake"
   ],
   "words": [
+    "ctest",
     "gtest",
     "PCCE"
   ],

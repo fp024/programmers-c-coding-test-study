@@ -30,5 +30,34 @@
       },
       "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake"
     }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-clang-build",
+      "configurePreset": "windows-clang",
+      "description": "windows-clang 환경의 빌드 프리셋",
+      "jobs": 8
+    },
+    {
+      "name": "mingw-build",
+      "configurePreset": "mingw",
+      "description": "mingw 환경의 빌드 프리셋"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "windows-clang-test",
+      "configurePreset": "windows-clang",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "mingw-test",
+      "configurePreset": "mingw",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
   ]
 }
