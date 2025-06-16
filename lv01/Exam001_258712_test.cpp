@@ -55,7 +55,7 @@ TEST(Exam001_258712_Tests, Default_TestCase_03) {
   EXPECT_EQ(result, 4);
 }
 
-TEST(Exam001_258712_Tests, Default_TestCase_03) {
+TEST(Exam001_258712_Tests, Default_TestCase_04) {
   const int result = solution(vector<string>{"a", "b", "c"},
                               vector<string>{
                                   "a b",  //
