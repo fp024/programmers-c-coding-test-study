@@ -10,13 +10,13 @@ using namespace std;
 vector<vector<int>> solution(vector<vector<int>> arr1,
                              vector<vector<int>> arr2)  //
 {
-  vector<vector<int>> answer(arr1.size(), vector<int>(arr2[0].size()));
+  vector<vector<int>> product(arr1.size(), vector<int>(arr2[0].size()));
 
-  for (int i = 0; i < answer.size(); i++) {
-    for (int j = 0; j < answer[i].size(); j++) {
-      answer[i][j] = 0;
+  for (int i = 0; i < product.size(); i++) {
+    for (int j = 0; j < product[i].size(); j++) {
+      product[i][j] = 0;
       for (int k = 0; k < arr1[i].size(); k++) {
-        answer[i][j] += arr1[i][k] * arr2[k][j];
+        product[i][j] += arr1[i][k] * arr2[k][j];
         // i:0
         //                   0  0         0  0
         //                   0  1         1  0
@@ -39,7 +39,7 @@ vector<vector<int>> solution(vector<vector<int>> arr1,
     }
   }
 
-  return answer;
+  return product;
 }
 
 //
