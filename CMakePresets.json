@@ -10,13 +10,13 @@
       "name": "windows-clang",
       "hidden": false,
       "generator": "Ninja",
-      "description": "LLVM + CLang + Ninja",
+      "description": "LLVM + Clang + Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
-      "toolchainFile": "${sourceDir}/toolchains/windows-clang.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake"
     },
     {
       "name": "mingw",
@@ -28,7 +28,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
-      "toolchainFile": "${sourceDir}/toolchains/mingw.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake"
     }
   ]
 }
