@@ -33,27 +33,27 @@
   ],
   "buildPresets": [
     {
-      "name": "windows-clang-build",
+      "name": "windows-clang",
       "configurePreset": "windows-clang",
       "description": "windows-clang 환경의 빌드 프리셋",
       "jobs": 8
     },
     {
-      "name": "mingw-build",
+      "name": "mingw",
       "configurePreset": "mingw",
       "description": "mingw 환경의 빌드 프리셋"
     }
   ],
   "testPresets": [
     {
-      "name": "windows-clang-test",
+      "name": "windows-clang",
       "configurePreset": "windows-clang",
       "output": {
         "outputOnFailure": true
       }
     },
     {
-      "name": "mingw-test",
+      "name": "mingw",
       "configurePreset": "mingw",
       "output": {
         "outputOnFailure": true
