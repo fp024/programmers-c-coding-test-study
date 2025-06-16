@@ -9,7 +9,8 @@
     "/.idea/**",
     "/.gitignore",
     "/CMakePresets.json",
-    "CMakeLists.txt"
+    "CMakeLists.txt",
+    "/toolchain.cmake"
   ],
   "words": [
     "gtest",
