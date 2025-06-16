@@ -17,7 +17,8 @@
         "CMAKE_C_COMPILER": "C:/LLVM/20.x/bin/clang.exe",
         "CMAKE_CXX_COMPILER": "C:/LLVM/20.x/bin/clang++.exe",
         "CMAKE_MAKE_PROGRAM": "C:/Ninja/1.12.x/ninja.exe",
-        "CMAKE_RC_COMPILER": "C:/VS2022/VC_TOOLS_X64_LINK/rc.exe"
+        "CMAKE_RC_COMPILER": "C:/VS2022/VC_TOOLS_X64_LINK/rc.exe",
+        "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       }
     },
     {
@@ -30,7 +31,8 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "C:/MinGW-w64/bin/gcc.exe",
         "CMAKE_CXX_COMPILER": "C:/MinGW-w64/bin/g++.exe",
-        "CMAKE_MAKE_PROGRAM": "C:/Ninja/1.12.x/ninja.exe"
+        "CMAKE_MAKE_PROGRAM": "C:/Ninja/1.12.x/ninja.exe",
+        "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
       "environment": {
         "PATH": "C:/MinGW-w64/bin;"
