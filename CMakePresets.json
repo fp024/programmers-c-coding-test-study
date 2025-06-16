@@ -1,11 +1,10 @@
 {
-  "version": 6,
+  "version": 10,
   "cmakeMinimumRequired": {
     "major": 3,
     "minor": 31,
     "patch": 0
   },
-
   "configurePresets": [
     {
       "name": "windows-clang",
@@ -16,7 +15,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       },
-      "toolchainFile": "${sourceDir}/toolchain.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/windows-clang.cmake"
     },
     {
       "name": "mingw",
@@ -27,7 +26,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       },
-      "toolchainFile": "${sourceDir}/toolchain.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/mingw.cmake"
     }
   ]
 }
