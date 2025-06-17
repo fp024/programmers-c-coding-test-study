@@ -28,7 +28,10 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_CXX_FLAGS": "-O2 -Wno-unused-result"
       },
-      "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake",
+      "environment": {
+        "PATH": "C:/MinGW-w64/bin;$penv{PATH}"
+      }
     }
   ],
   "buildPresets": [
@@ -41,7 +44,8 @@
     {
       "name": "mingw",
       "configurePreset": "mingw",
-      "description": "mingw 환경의 빌드 프리셋"
+      "description": "mingw 환경의 빌드 프리셋",
+      "jobs": 8
     }
   ],
   "testPresets": [
