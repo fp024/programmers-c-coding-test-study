@@ -1,3 +1,4 @@
+#include <array>
 #include <string>
 #include <vector>
 
@@ -10,8 +11,8 @@ using namespace std;
 
 vector<int> solution(int n) {
   // 방향 지정: 아래, 오른쪽, 왼쪽위
-  const int dx[] = {0, 1, -1};
-  const int dy[] = {1, 0, -1};
+  const array<int, 3> dx = {0, 1, -1};
+  const array<int, 3> dy = {1, 0, -1};
 
   // 삼각형 데이터를 넣을 벡터
   vector<vector<int>> triangle(n, vector<int>(n));
