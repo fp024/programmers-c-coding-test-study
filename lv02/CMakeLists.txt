@@ -3,5 +3,6 @@ if (BUILD_TESTING)
     add_coding_test(02 Exam001_42842 cpp)
     add_coding_test(02 Exam002_87377 cpp)
     add_coding_test(02 Exam003_12949 cpp)
+    add_coding_test(02 Exam004_68645 cpp)
 
 endif ()
