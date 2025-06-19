@@ -1,5 +1,4 @@
 #include <array>
-#include <string>
 #include <vector>
 
 using namespace std;
@@ -8,14 +7,9 @@ using namespace std;
  * 삼각 달팽이 - ✨✨
  *   https://school.programmers.co.kr/learn/courses/30/lessons/68645
  */
-
-vector<int> solution(int n) {
-  // 방향 지정: 아래, 오른쪽, 왼쪽위
-  const array<int, 3> dx = {0, 1, -1};
-  const array<int, 3> dy = {1, 0, -1};
-
+vector<int> solution(const int n) {
   // 삼각형 데이터를 넣을 벡터
-  vector<vector<int>> triangle(n, vector<int>(n));
+  vector triangle(n, vector<int>(n));
 
   int x = 0;
   int y = 0;
@@ -23,12 +17,16 @@ vector<int> solution(int n) {
   int v = 1;
 
   while (true) {
+    // 방향 지정: 아래, 오른쪽, 왼쪽위
+    // 💡 컴파일 타임 상수가 되서, while안에 들어가도 한번만 생성된다.
+    constexpr array<int, 3> dy = {1, 0, -1};
+    constexpr array<int, 3> dx = {0, 1, -1};
     triangle[y][x] = v++;
 
-    int y_next = y + dy[d];
-    int x_next = x + dx[d];
     // 다음 이동이 유효하지 않으면 방향 변경
-    if (y_next >= n ||                 //
+    if (int y_next = y + dy[d],
+        x_next = x + dx[d];            //
+        y_next >= n ||                 //
         y_next < 0 ||                  //
         x_next >= n ||                 //
         x_next < 0 ||                  //
@@ -58,7 +56,6 @@ vector<int> solution(int n) {
   // 답변 배열 채워넣기
   vector<int> answer;
 
-  int index = 0;
   for (int i = 0; i < triangle.size(); i++) {
     for (int j = 0; j <= i; j++) {
       answer.push_back(triangle[i][j]);

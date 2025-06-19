@@ -15,7 +15,7 @@ vector<int> solution(int n);
 TEST(Exam004_68645_Tests, Default_TestCase_01) {
   const vector<int> result = solution(4);
   EXPECT_THAT(result, ContainerEq(  //
-                          vector<int>{
+                          vector{
                               1,          //
                               2, 9,       //
                               3, 10, 8,   //
@@ -28,7 +28,7 @@ TEST(Exam004_68645_Tests, Default_TestCase_01) {
 TEST(Exam004_68645_Tests, Default_TestCase_02) {
   const vector<int> result = solution(5);
   EXPECT_THAT(result, ContainerEq(  //
-                          vector<int>{
+                          vector{
                               1,              //
                               2, 12,          //
                               3, 13, 11,      //
@@ -42,7 +42,7 @@ TEST(Exam004_68645_Tests, Default_TestCase_02) {
 TEST(Exam004_68645_Tests, Default_TestCase_03) {
   const vector<int> result = solution(6);
   EXPECT_THAT(result, ContainerEq(  //
-                          vector<int>{
+                          vector{
                               1,                     //
                               2, 15,                 //
                               3, 16, 14,             //
@@ -57,7 +57,7 @@ TEST(Exam004_68645_Tests, Default_TestCase_03) {
 TEST(Exam004_68645_Tests, Extra_TestCase_01) {
   const vector<int> result = solution(2);
   EXPECT_THAT(result, ContainerEq(  //
-                          vector<int>{
+                          vector{
                               1,     //
                               2, 3,  //
                           }  //

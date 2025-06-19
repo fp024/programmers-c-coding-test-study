@@ -1,4 +1,3 @@
-#include <string>
 #include <vector>
 
 using namespace std;
@@ -7,10 +6,10 @@ using namespace std;
  * 행렬의 곱셈 - ✨✨
  *   https://school.programmers.co.kr/learn/courses/30/lessons/12949
  */
-vector<vector<int>> solution(vector<vector<int>> arr1,
-                             vector<vector<int>> arr2)  //
+vector<vector<int>> solution(const vector<vector<int>> &arr1,
+                             const vector<vector<int>> &arr2)  //
 {
-  vector<vector<int>> product(arr1.size(), vector<int>(arr2[0].size()));
+  vector product(arr1.size(), vector<int>(arr2[0].size()));
 
   for (int i = 0; i < product.size(); i++) {
     for (int j = 0; j < product[i].size(); j++) {
