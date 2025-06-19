@@ -14,7 +14,7 @@
 # CMake, LLVM/Clang, Ninja, MinGW-w64 환경 변수 설정
 export CMAKE_VERSION=3.x
 export LLVM_CLANG_VERSION=20.x
-export NINJA_VERSION=1.12.x
+export NINJA_VERSION=latest
 
 # MinGW-w64는 버전 관리하지 않고 경로만 지정
 export MINGW_W64_HOME=/c/MinGW-w64
