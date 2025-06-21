@@ -7,7 +7,7 @@ using namespace std;
  * 모의고사 ★
  *   https://school.programmers.co.kr/learn/courses/30/lessons/42840
  */
-/** 선언 */
+/** 📝 ===== 선언 ===== 📝 */
 vector<int> solution(const vector<int> &answers);
 
 /** 답안과 패턴을 전달 받았을 때.. 점수 계산 */
@@ -21,7 +21,7 @@ bool compare(const pair<int, int> &a, const pair<int, int> &b) {
   return a.second > b.second;
 }
 
-/** 정의 */
+/** 🏗️ ===== 정의 ===== 🏗️ */
 vector<int> solution(const vector<int> &answers) {
   vector<pair<int, int>> number_score_pairs;
 
