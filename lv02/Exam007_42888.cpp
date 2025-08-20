@@ -1,3 +1,4 @@
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <unordered_map>
@@ -16,25 +17,29 @@ vector<string> solution(const vector<string> &record);
 vector<string> solution(const vector<string> &record) {
   unordered_map<string, string> userid_nickname_map;
   for (auto &row : record) {
-    string cmd, name, nickname;
+    string cmd, userid, nickname;
     stringstream ss(row);
-    ss >> cmd >> name >> nickname;
+    ss >> cmd >> userid >> nickname;
+
+    // 없는 열(col)에 대해서는 그냥 빈 문자열이 된다.
+    cout << cmd << " " << userid << " " << nickname << " " << nickname.empty()
+         << endl;
 
     if (cmd == "Enter" || cmd == "Change") {
-      userid_nickname_map[name] = nickname;
+      userid_nickname_map[userid] = nickname;
     }
   }
 
   vector<string> answer;
   for (auto &row : record) {
-    string cmd, name, nickname;
+    string cmd, userid, nickname;
     stringstream ss(row);
-    ss >> cmd >> name >> nickname;
+    ss >> cmd >> userid >> nickname;
 
     if (cmd == "Enter") {
-      answer.emplace_back(userid_nickname_map[name] + "님이 들어왔습니다.");
+      answer.emplace_back(userid_nickname_map[userid] + "님이 들어왔습니다.");
     } else if (cmd == "Leave") {
-      answer.emplace_back(userid_nickname_map[name] + "님이 나갔습니다.");
+      answer.emplace_back(userid_nickname_map[userid] + "님이 나갔습니다.");
     }
   }
 
