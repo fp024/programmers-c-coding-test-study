@@ -6,5 +6,5 @@ if (BUILD_TESTING)
     add_coding_test(02 Exam004_68645 cpp)
     add_coding_test(02 Exam005_81302 cpp)
     add_coding_test(02 Exam006_42840 cpp)
-
+    add_coding_test(02 Exam007_42888 cpp)
 endif ()
