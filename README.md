@@ -29,12 +29,19 @@
 
 ### 개발 도구
 
-* CLion
+* **CLion**
   * https://www.jetbrains.com/clion/
   * **Free for non-commercial use** : 요즘은 CLion도 비상업적용도로는 무료로 사용할 수 있다. 👍
+  * ⚠️ 사전에 [CMakePresets.json](./CMakePresets.json)에 정의한 clang, mingw 프리셋 대신, CLion의 기본 툴체인을 써야지만 디버깅할 때 STL 컨테이너의 데이터를 보는데 문제가 없었다. 😂 
+    아마도 프리셋에 연결된 디버깅 도구(LLDB, GDB)들의 버전이 최신이고 CLion에 호환되지 않아 그럴 수도 있겠다.😅
 
-* Visual Studio 2022 Community
+* **VSCode**
+  * [C/C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)과 [C++ TestMate](https://marketplace.visualstudio.com/items?itemName=matepek.vscode-catch2-test-adapter)만 설치해도 괜찮게 쓸 수 있었다. 👍
+    * 💡 VSCode에서는 사전에 [CMakePresets.json](./CMakePresets.json)에 정의한 clang, mingw 프리셋 환경을 사용해도 디버깅할 때, STL 컨테이너의 데이터를 보는데 문제가 없었다. 😊👍
+
+* **Visual Studio 2022 Community**
   * https://visualstudio.microsoft.com/ko/vs/community/
+  * 근데 이 프로그램은 왠지 모르게 사용을 안하게됨 😅, 익숙하지 않아서 그렇기도 하지만..😅
 
 
 
