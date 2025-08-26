@@ -11,6 +11,7 @@ using namespace testing;
 vector<int> solution(const vector<string>& id_list,
                      const vector<string>& report, int k);
 
+// cspell:disable
 //=============================================
 // 💡 파라미터화하지 않고 테스트 함수를 개별적으로 사용
 //=============================================

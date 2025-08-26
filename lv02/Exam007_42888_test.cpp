@@ -10,6 +10,7 @@ using namespace testing;
 // ✔️ 문제 해결 함수
 vector<string> solution(const vector<string> &record);
 
+// cspell:disable
 // 기본 테스트 케이스들
 TEST(Exam007_42888_Tests, Default_TestCase_01) {
   const vector<string> record{
