@@ -11,13 +11,13 @@ using namespace testing;
 vector<string> solution(const vector<string> &orders,
                         const vector<int> &course);
 
-vector<string> combinations(string menu_ids, int r);
+vector<string> combinations(const string &menu_ids, int r);
 
-void calc_combinations(int idx,                      //
-                       vector<char> &order,          //
-                       const string &result,         //
-                       vector<string> &result_list,  //
-                       int r                         //
+void calc_combinations(int idx,                       //
+                       const vector<char> &menu_ids,  //
+                       string result,                 //
+                       vector<string> &result_list,   //
+                       int r                          //
 );
 
 // cspell:disable

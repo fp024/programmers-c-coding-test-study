@@ -13,13 +13,13 @@ using namespace std;
 vector<string> solution(const vector<string> &orders,
                         const vector<int> &course);
 
-vector<string> combinations(string menu_ids, int r);
+vector<string> combinations(const string &menu_ids, int r);
 
-void calc_combinations(int idx,                      //
-                       vector<char> &order,          //
-                       const string &result,         //
-                       vector<string> &result_list,  //
-                       int r                         //
+void calc_combinations(int idx,                       //
+                       const vector<char> &menu_ids,  //
+                       string result,                 //
+                       vector<string> &result_list,   //
+                       int r                          //
 );
 /** 💡 ===== 문제 풀이 전략 ===== 💡 */
 /*
@@ -35,25 +35,32 @@ void calc_combinations(int idx,                      //
 
 /** 🏗️ ===== 정의 ===== 🏗️ */
 // 재귀 실행 영역
-void calc_combinations(const int idx,                //
-                       vector<char> &order,          //
-                       const string &result,         //
-                       vector<string> &result_list,  //
-                       const int r                   //
+void calc_combinations(const int idx,                 //
+                       const vector<char> &menu_ids,  //
+                       string result,                 // 📌 복사로 받음
+                       vector<string> &result_list,   //
+                       const int r                    //
 ) {
   if (result.length() == r) {
-    result_list.push_back(result);
+    result_list.push_back(std::move(result));
     return;
   }
 
-  for (int i = idx; i < order.size(); i++) {
-    calc_combinations(i + 1, order, result + order[i], result_list, r);
+  for (int i = idx; i < menu_ids.size(); i++) {
+    result.push_back(menu_ids[i]);  // 📌 문자 추가
+    calc_combinations(i + 1, menu_ids, result, result_list, r);
+    result.pop_back();  // 📌 백트래킹: 문자 제거
   }
 }
 
-vector<string> combinations(string menu_ids, const int r) {
+vector<string> combinations(const string &menu_ids, const int r) {
+  if (r <= 0 || r > static_cast<int>(menu_ids.size())) {
+    return {};  // 빈 벡터 반환
+  }
+
   vector<string> result_list;
-  vector menus(menu_ids.begin(), menu_ids.end());
+  const vector menus(menu_ids.begin(), menu_ids.end());
+  result_list.reserve(100);  // 적절한 크기로 예약
   calc_combinations(0, menus, "", result_list, r);
   return result_list;
 }
@@ -65,10 +72,10 @@ vector<string> solution(const vector<string> &orders,
   for (const int &course_qty : course) {
     // <코스 단위, 카운트> 맵
     unordered_map<string, int> course_unit_count_map;
-    for (string order_set : orders) {  // 참조가 아닌 복사 방식으로 순회
+    for (string menu_ids : orders) {  // 참조가 아닌 복사 방식으로 순회
       // 메뉴 ID들의 정렬
-      sort(order_set.begin(), order_set.end());
-      vector<string> combi_list = combinations(order_set, course_qty);
+      sort(menu_ids.begin(), menu_ids.end());
+      vector<string> combi_list = combinations(menu_ids, course_qty);
 
       // 코드 단위 카운트 맵을 생성
       for (const string &combi : combi_list) {
@@ -78,14 +85,11 @@ vector<string> solution(const vector<string> &orders,
       }
     }
 
-    int max_count = 0;
-    for (const auto &[_, count] : course_unit_count_map) {
-      // 코스 단위별 가장 많이 나타난 카운트:
-      //   예) 코스단위2|3|4 에서 가장 많이 나온 코스단위 카운트
-      if (count > max_count) {
-        max_count = count;
-      }
-    }
+    const int max_count =
+        std::max_element(
+            course_unit_count_map.begin(), course_unit_count_map.end(),
+            [](const auto &a, const auto &b) { return a.second < b.second; })
+            ->second;
 
     for (const auto &[c_unit, count] : course_unit_count_map) {
       if (count == max_count  //
