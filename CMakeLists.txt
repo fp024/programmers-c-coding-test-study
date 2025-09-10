@@ -5,6 +5,19 @@ project(programmers-c-coding-test-study C CXX)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+# compile_commands.json가 항상 생성되도록 설정
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+# 빌드 시 compile_commands.json를 루트로 자동 복사
+add_custom_target(copy_compile_commands ALL
+	COMMAND ${CMAKE_COMMAND} -E copy_if_different
+		"${CMAKE_BINARY_DIR}/compile_commands.json"
+		"${CMAKE_SOURCE_DIR}/compile_commands.json"
+	DEPENDS "${CMAKE_BINARY_DIR}/compile_commands.json"
+	COMMENT "Copy compile_commands.json to project root"
+	VERBATIM
+)
+
 if (WIN32)
     # Windows 시스템 로케일 확인을 위한 함수
     function(get_system_encoding result)
@@ -117,7 +130,7 @@ if (BUILD_TESTING)
 endif ()
 
 # 각 레벨별 하위 디렉토리 추가, 빌드가 필요없을 경우 주석으로 둔다.
-# add_subdirectory(lv00)
+add_subdirectory(lv00)
 add_subdirectory(lv01)
 add_subdirectory(lv02)
 add_subdirectory(lv03)

@@ -2,5 +2,6 @@
   "recommendations": [
     "ms-vscode.cpptools-extension-pack",
     "matepek.vscode-catch2-test-adapter"
+    // "anysphere.cpptools"  // 💡 Cursor + "Anysphere의 C/C++ 확장"
   ]
 }

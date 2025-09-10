@@ -5,3 +5,6 @@ build/
 cmake-build-debug/
 cmake-build-debug-event-trace/
 toolchains/local_paths.cmake
+compile_commands.json
+
+.cache/
