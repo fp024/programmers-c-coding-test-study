@@ -70,6 +70,7 @@ vector<string> solution(const vector<string> &orders,
   vector<string> answer;
 
   for (const int &course_qty : course) {
+    constexpr int MIN_MENU_COUNT = 2;
     // <코스 단위, 카운트> 맵
     unordered_map<string, int> course_unit_count_map;
     for (string menu_ids : orders) {  // 참조가 아닌 복사 방식으로 순회
@@ -85,6 +86,10 @@ vector<string> solution(const vector<string> &orders,
       }
     }
 
+    if (course_unit_count_map.size() < MIN_MENU_COUNT) {
+      continue;
+    }
+
     const int max_count =
         std::max_element(
             course_unit_count_map.begin(), course_unit_count_map.end(),
@@ -95,7 +100,7 @@ vector<string> solution(const vector<string> &orders,
       if (count == max_count  //
                               // 코스 단위 별 가장 많이 나온 코스단위를 답안에
                               // 추가하는데, 2개 이상일 때만 답안에 추가
-          && count >= 2) {
+          && count >= MIN_MENU_COUNT) {
         answer.push_back(c_unit);
       }
     }

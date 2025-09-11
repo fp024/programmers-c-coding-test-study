@@ -8,3 +8,4 @@ toolchains/local_paths.cmake
 compile_commands.json
 
 .cache/
+Testing/
