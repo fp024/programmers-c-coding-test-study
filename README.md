@@ -71,53 +71,30 @@
 > * 테스트 매크로 바로 옆에 실행 버튼▶️ 나오는 CLion이 사용하기에는 좀 더 편한듯..👍
 >   * VS2022에서도 테스트 매크로 옆에 오른쪽 마우스 메뉴 열면 Run Tests라고 뜨긴함 😅
 
-* 프로젝트 빌드
+* 프로젝트 설정 / 빌드 / 테스트
 
+  * **preset**은 `windows-clang`,  `mingw` 두가지를 설정해 두었다. ([CMakePresets.json](CMakePresets.json))
+  
   ```sh
   cd {프로젝트 루트}
-  # 빌드 디렉토리 생성
-  mkdir build
-  # 빌드 준비 (기본 환경으로 빌드)
-  cmake .. 
-  # 빌드
-  cmake --build .
+  # 빌드 설정
+  cmake --preset windows-clang # 또는 mingw
+  # 빌드 
+  cmake --build --preset windows-clang # 또는 mingw
+  # 테스트
+  ctest --preset windows-clang # 또는 mingw
   ```
   
-* [프로젝트 빌드 설정 - 상세](docs/프로젝트-빌드-설정.md)
-  
-* clang-cl을 사용한 빌드 설정
-  
-  ```sh
-  cmake -G "Ninja" -DCMAKE_C_COMPILER=clang-cl -DCMAKE_CXX_COMPILER=clang-cl ..
-  ```
-  
-* clang, clang++을 사용한 빌드 설정
-
-  ```sh
-  cmake -G "Ninja" -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ ..
-  ```
-
-  
-
-* 전체 테스트 실행 (프로젝트 빌드가 된 상태에서)
-
-  ```sh
-  # Clang에서는 그냥 ctest로 실행
-  ctest
-  # MSVC (VS2022) 환경이라면 실행 설정 옵션으로 Debug 또는 Release 둘 중 하나를 선택해야했다.
-  ctest -C Debug
-  ```
-
 * lv00만 테스트
 
   ```sh
-  ctest -R "lv00"
+  ctest --preset windows-clang -R "lv00"
   ```
 
 * 특정 테스트 문제만 테스트
 
   ```sh
-  ctest -R "^lv00_Exam000_00000$"
+  ctest --preset windows-clang -R "^lv00_Exam000_00000_test$"
   ```
 
 
