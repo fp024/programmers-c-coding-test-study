@@ -12,11 +12,7 @@
     "CMakeLists.txt",
     "/toolchain.cmake"
   ],
-  "words": [
-    "ctest",
-    "gtest",
-    "PCCE"
-  ],
+  "words": ["clangd", "combi", "ctest", "gtest", "PCCE"],
   "ignoreWords": [],
   "import": []
 }

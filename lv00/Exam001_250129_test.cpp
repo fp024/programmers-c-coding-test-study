@@ -17,6 +17,7 @@ class Exam001_250129_Tests : public Test {
   void TearDown() override {}
 };
 
+// cspell:disable
 // 기본 테스트 케이스들
 TEST_F(Exam001_250129_Tests, EmptyRoute) {
   const vector<int> result = solution("");

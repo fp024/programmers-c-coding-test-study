@@ -1,8 +1,6 @@
 #include <gmock/gmock-matchers.h>
 #include <gtest/gtest.h>
 
-#include <iostream>
-
 using namespace std;
 using namespace testing;
 

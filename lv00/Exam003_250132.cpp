@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 /**
  * [PCCE 기출문제] 2번 / 피타고라스의 정리
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250132

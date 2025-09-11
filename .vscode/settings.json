@@ -53,10 +53,14 @@
     "chrono": "cpp",
     "functional": "cpp",
     "vector": "cpp"
-  }
+  },
   // 💡 Cursor + "Anysphere의 C/C++ 확장" + "clangd 확장"  환경에서 컴파일 명령어 결과를 확인하기 위한 설정
   //     빌드 디렉토리 내에 생성된 compile_commands.json가
   //     루트로 자동 복사되는 설정을 CMakeLists.txt에서 정의하였기 때문에,
   //     아래 설정은 가이드용으로만 남겨둔다.
-  // "clangd.arguments": ["--compile-commands-dir=build/windows-clang"]
+  // "clangd.arguments": ["--compile-commands-dir=build/windows-clang"],
+  //
+  // 💡 clangd 경로 설정
+  //     VSCode에서는 clangd를 설치하지 않아 적용되지 않는다. 일단은 clangd는 Cursor 환경에서만 사용해보자!
+  "clangd.path": "C:/LLVM/20.x/bin/clangd.exe"
 }

@@ -14,6 +14,7 @@ class Exam004_340204_Tests : public Test {
   void TearDown() override {}
 };
 
+// cspell:disable
 // 기본 테스트 케이스들
 TEST_F(Exam004_340204_Tests, DefaultTestCase01) {
   internal::CaptureStdout();
