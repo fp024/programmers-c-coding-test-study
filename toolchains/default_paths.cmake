@@ -2,4 +2,3 @@
 set(LLVM_ROOT "C:/LLVM/20.x" CACHE PATH "Path to LLVM root")
 set(MINGW_ROOT "C:/MinGW-w64" CACHE PATH "Path to MinGW-w64 root")
 set(NINJA_ROOT "C:/Ninja/latest" CACHE PATH "Path to Ninja root")
-set(VS2022_TOOLS_ROOT "C:/VS2022/VC_TOOLS_X64_LINK" CACHE PATH "Path to VS2022 VC Tools") 
