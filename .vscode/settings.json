@@ -1,10 +1,10 @@
 {
   // 포멧터 설정
   "editor.formatOnSave": true,
-  "C_Cpp.clang_format_path": "C:/LLVM/20.x/bin/clang-format.exe",
+  "C_Cpp.clang_format_path": "C:/LLVM/21.x/bin/clang-format.exe",
   "C_Cpp.clang_format_style": "file",
   // CMake 경로 설정
-  "cmake.cmakePath": "C:/CMake/3.x/bin/cmake.exe",
+  "cmake.cmakePath": "C:/CMake/4.x/bin/cmake.exe",
   // C++ TestMate의 Google Test 실행 결과 터미널 커스텀 색상 설정
   "editor.tokenColorCustomizations": {
     "[*Light*]": {
@@ -62,5 +62,5 @@
   //
   // 💡 clangd 경로 설정
   //     VSCode에서는 clangd를 설치하지 않아 적용되지 않는다. 일단은 clangd는 Cursor 환경에서만 사용해보자!
-  "clangd.path": "C:/LLVM/20.x/bin/clangd.exe"
+  "clangd.path": "C:/LLVM/21.x/bin/clangd.exe"
 }

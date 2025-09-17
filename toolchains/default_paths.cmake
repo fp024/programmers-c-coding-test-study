@@ -1,4 +1,4 @@
 # 기본 경로 (샘플)
-set(LLVM_ROOT "C:/LLVM/20.x" CACHE PATH "Path to LLVM root")
+set(LLVM_ROOT "C:/LLVM/21.x" CACHE PATH "Path to LLVM root")
 set(MINGW_ROOT "C:/MinGW-w64" CACHE PATH "Path to MinGW-w64 root")
 set(NINJA_ROOT "C:/Ninja/latest" CACHE PATH "Path to Ninja root")
