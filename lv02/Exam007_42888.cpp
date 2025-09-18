@@ -11,12 +11,12 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/42888
  */
 /** 📝 ===== 선언 ===== 📝 */
-vector<string> solution(const vector<string> &record);
+vector<string> solution(const vector<string>& record);
 
 /** 🏗️ ===== 정의 ===== 🏗️ */
-vector<string> solution(const vector<string> &record) {
+vector<string> solution(const vector<string>& record) {
   unordered_map<string, string> userid_nickname_map;
-  for (auto &row : record) {
+  for (auto& row : record) {
     string cmd, userid, nickname;
     stringstream ss(row);
     ss >> cmd >> userid >> nickname;
@@ -31,7 +31,7 @@ vector<string> solution(const vector<string> &record) {
   }
 
   vector<string> answer;
-  for (auto &row : record) {
+  for (auto& row : record) {
     string cmd, userid, nickname;
     stringstream ss(row);
     ss >> cmd >> userid >> nickname;

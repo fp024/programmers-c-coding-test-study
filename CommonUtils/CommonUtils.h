@@ -30,7 +30,6 @@ void printArraySimple(int array[], int length);
  */
 void swap(int array[], int aIndex, int bIndex);
 
-
 /**
  * 중간값 구하기
  *
@@ -47,5 +46,4 @@ void swap(int array[], int aIndex, int bIndex);
  */
 int getMedianIndex(const int array[], int firstIndex, int lastIndex);
 
-
-#endif // COMMON_UTILS_H
+#endif  // COMMON_UTILS_H

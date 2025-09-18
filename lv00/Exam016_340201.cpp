@@ -21,9 +21,9 @@ int func2(const int num) {
   return num;
 }
 
-int func3(const vector<string> &station) {
+int func3(const vector<string>& station) {
   int num = 0;
-  for (const auto &i : station) {
+  for (const auto& i : station) {
     if (i == "Off") {
       num += 1;
     }
@@ -31,9 +31,9 @@ int func3(const vector<string> &station) {
   return num;
 }
 
-int func4(const vector<string> &station) {
+int func4(const vector<string>& station) {
   int num = 0;
-  for (const auto &i : station) {
+  for (const auto& i : station) {
     if (i == "On") {
       num += 1;
     }
@@ -41,9 +41,9 @@ int func4(const vector<string> &station) {
   return num;
 }
 
-int solution(const int seat, const vector<vector<string> > &passengers) {
+int solution(const int seat, const vector<vector<string> >& passengers) {
   int num_passenger = 0;
-  for (const auto &passenger : passengers) {
+  for (const auto& passenger : passengers) {
     num_passenger += func4(passenger);
     num_passenger -= func3(passenger);
   }

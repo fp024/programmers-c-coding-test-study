@@ -21,7 +21,7 @@ vector<int> solution(const int brown, const int yellow) {
   const vector<pair<int, int>> yellowDivisorPairs = getDivisorPairs(yellow);
 
   // (2) 각 약수 쌍에 대해 brown 영역을 고려한 검증
-  for (auto &[w_yellow, h_yellow] : yellowDivisorPairs) {
+  for (auto& [w_yellow, h_yellow] : yellowDivisorPairs) {
     if (const auto w_brown = w_yellow + 2,  // 가로에 양쪽 2칸 추가
         h_brown = h_yellow + 2;
         w_brown * h_brown == brown + yellow) {

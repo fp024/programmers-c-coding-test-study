@@ -10,15 +10,15 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/72411
  */
 /** 📝 ===== 선언 ===== 📝 */
-vector<string> solution(const vector<string> &orders,
-                        const vector<int> &course);
+vector<string> solution(const vector<string>& orders,
+                        const vector<int>& course);
 
-vector<string> combinations(const string &menu_ids, int r);
+vector<string> combinations(const string& menu_ids, int r);
 
 void calc_combinations(int idx,                       //
-                       const vector<char> &menu_ids,  //
+                       const vector<char>& menu_ids,  //
                        string result,                 //
-                       vector<string> &result_list,   //
+                       vector<string>& result_list,   //
                        int r                          //
 );
 /** 💡 ===== 문제 풀이 전략 ===== 💡 */
@@ -36,9 +36,9 @@ void calc_combinations(int idx,                       //
 /** 🏗️ ===== 정의 ===== 🏗️ */
 // 재귀 실행 영역
 void calc_combinations(const int idx,                 //
-                       const vector<char> &menu_ids,  //
+                       const vector<char>& menu_ids,  //
                        string result,                 // 📌 복사로 받음
-                       vector<string> &result_list,   //
+                       vector<string>& result_list,   //
                        const int r                    //
 ) {
   if (result.length() == r) {
@@ -53,7 +53,7 @@ void calc_combinations(const int idx,                 //
   }
 }
 
-vector<string> combinations(const string &menu_ids, const int r) {
+vector<string> combinations(const string& menu_ids, const int r) {
   if (r <= 0 || r > static_cast<int>(menu_ids.size())) {
     return {};  // 빈 벡터 반환
   }
@@ -65,11 +65,11 @@ vector<string> combinations(const string &menu_ids, const int r) {
   return result_list;
 }
 
-vector<string> solution(const vector<string> &orders,
-                        const vector<int> &course) {
+vector<string> solution(const vector<string>& orders,
+                        const vector<int>& course) {
   vector<string> answer;
 
-  for (const int &course_qty : course) {
+  for (const int& course_qty : course) {
     constexpr int MIN_MENU_COUNT = 2;
     // <코스 단위, 카운트> 맵
     unordered_map<string, int> course_unit_count_map;
@@ -79,7 +79,7 @@ vector<string> solution(const vector<string> &orders,
       vector<string> combi_list = combinations(menu_ids, course_qty);
 
       // 코드 단위 카운트 맵을 생성
-      for (const string &combi : combi_list) {
+      for (const string& combi : combi_list) {
         // C++의 map은 Value 타입의 기본값으로 초기화되어,
         // 0으로 초기화 되어있으므로 그냥 증감해주면 된다.
         course_unit_count_map[combi]++;
@@ -93,10 +93,10 @@ vector<string> solution(const vector<string> &orders,
     const int max_count =
         std::max_element(
             course_unit_count_map.begin(), course_unit_count_map.end(),
-            [](const auto &a, const auto &b) { return a.second < b.second; })
+            [](const auto& a, const auto& b) { return a.second < b.second; })
             ->second;
 
-    for (const auto &[c_unit, count] : course_unit_count_map) {
+    for (const auto& [c_unit, count] : course_unit_count_map) {
       if (count == max_count  //
                               // 코스 단위 별 가장 많이 나온 코스단위를 답안에
                               // 추가하는데, 2개 이상일 때만 답안에 추가

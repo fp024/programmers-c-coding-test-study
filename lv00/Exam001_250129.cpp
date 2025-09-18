@@ -7,7 +7,7 @@ using namespace std;
  * [PCCE 기출문제] 5번 / 산책
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250129
  */
-vector<int> solution(const string &route) {
+vector<int> solution(const string& route) {
   int east = 0;
   int north = 0;
   vector<int> answer(2);

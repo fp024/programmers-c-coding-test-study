@@ -9,7 +9,7 @@ using namespace testing;
 
 /** === 💡 테스트할 함수 선언 💡 === */
 // 문제 해결 함수
-vector<int> solution(const vector<vector<string>> &places);
+vector<int> solution(const vector<vector<string>>& places);
 
 // 기본 테스트 케이스들
 // cspell:disable

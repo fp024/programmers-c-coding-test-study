@@ -8,7 +8,7 @@ using namespace std;
 using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
-int solution(int seat, const vector<vector<string> > &passengers);
+int solution(int seat, const vector<vector<string> >& passengers);
 
 class Exam016_340201_Tests : public Test {
  protected:

@@ -9,7 +9,7 @@ using namespace testing;
 
 /** === 💡 테스트할 함수 선언 💡 === */
 // 문제 해결 함수
-vector<string> solution(const vector<vector<int>> &line);
+vector<string> solution(const vector<vector<int>>& line);
 
 // 기본 테스트 케이스들
 TEST(Exam002_87377_Tests, Default_TestCase_01) {

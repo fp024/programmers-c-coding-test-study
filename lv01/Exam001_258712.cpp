@@ -12,13 +12,13 @@ using namespace std;
  * 가장 많이 받은 선물
  *   https://school.programmers.co.kr/learn/courses/30/lessons/258712
  */
-int solution(const vector<string> &friends, const vector<string> &gifts) {
+int solution(const vector<string>& friends, const vector<string>& gifts) {
   auto answer = 0;
 
   // 💡 <보낸사람ID, <선물받는ID, 보낸선물 개수>> Map
   map<string, map<string, int>> giftSenderReceiversMap;
 
-  for (auto &senderAndReceiver : gifts) {
+  for (auto& senderAndReceiver : gifts) {
     const auto splitIndex = senderAndReceiver.find(' ');
     auto sender = senderAndReceiver.substr(0, splitIndex);
     auto receiver = senderAndReceiver.substr(splitIndex + 1);
@@ -28,9 +28,9 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
 
 #if DEBUG
   // 💡 중간 결과 출력 😅
-  for (const auto &[sender, receivers] : giftSenderReceiversMap) {
+  for (const auto& [sender, receivers] : giftSenderReceiversMap) {
     cout << sender << "가 준 선물:" << endl;
-    for (const auto &[receiver, count] : receivers) {
+    for (const auto& [receiver, count] : receivers) {
       cout << "  -> " << receiver << ": " << count << "개" << endl;
     }
     cout << endl;
@@ -42,8 +42,8 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
   // 💡 ID별 받은선물수 Map
   map<string, int> receivedCount;
 
-  for (const auto &id : friends) {
-    for (const auto &[receiver, count] : giftSenderReceiversMap[id]) {
+  for (const auto& id : friends) {
+    for (const auto& [receiver, count] : giftSenderReceiversMap[id]) {
       sentCount[id] += count;
       receivedCount[receiver] += count;
     }
@@ -59,11 +59,11 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
   }
 
 #if DEBUG
-  for (const auto &[sender, count] : sentCount) {
+  for (const auto& [sender, count] : sentCount) {
     cout << "선물 보낸수:" << sender << ": " << count << endl;
   }
 
-  for (const auto &[receiver, count] : receivedCount) {
+  for (const auto& [receiver, count] : receivedCount) {
     cout << "선물 받은수:" << receiver << ": " << count << endl;
   }
 #endif
@@ -74,8 +74,8 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
   // 모든 친구 쌍에 대해 처리
   for (int i = 0; i < friends.size(); i++) {
     for (int j = i + 1; j < friends.size(); j++) {
-      const string &person1 = friends[i];
-      const string &person2 = friends[j];
+      const string& person1 = friends[i];
+      const string& person2 = friends[j];
       // 직접 주고받은 선물 수
 
       if (const int gifts1to2 = giftSenderReceiversMap[person1][person2],
@@ -99,7 +99,7 @@ int solution(const vector<string> &friends, const vector<string> &gifts) {
   }
 
   // 💡 최댓값 찾기
-  for (const auto &[person, count] : nextMonthGifts) {
+  for (const auto& [person, count] : nextMonthGifts) {
     answer = max(answer, count);
   }
 

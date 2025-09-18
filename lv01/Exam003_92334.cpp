@@ -11,11 +11,11 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/92334
  */
 /** 📝 ===== 선언 ===== 📝 */
-vector<int> solution(const vector<string> &id_list,
-                     const vector<string> &report, int k);
+vector<int> solution(const vector<string>& id_list,
+                     const vector<string>& report, int k);
 /** 🏗️ ===== 정의 ===== 🏗️ */
-vector<int> solution(const vector<string> &id_list,
-                     const vector<string> &report, int k) {
+vector<int> solution(const vector<string>& id_list,
+                     const vector<string>& report, int k) {
   // 불량 유저별 신고자 set
   //    <불량유저ID ,set<신고자ID>>
   unordered_map<string, unordered_set<string>> bad_user_and_reporters_map;
@@ -23,7 +23,7 @@ vector<int> solution(const vector<string> &id_list,
   //    <신고자ID ,set<불량유저ID>>
   unordered_map<string, unordered_set<string>> reporter_and_bad_users_map;
 
-  for (const auto &r : report) {
+  for (const auto& r : report) {
     string reporter, bad_user;
     stringstream ss(r);
     ss >> reporter >> bad_user;
@@ -34,14 +34,14 @@ vector<int> solution(const vector<string> &id_list,
   vector answer(id_list.size(), 0);
 
   for (auto i = 0; i < id_list.size(); i++) {
-    const auto &reporter = id_list[i];
+    const auto& reporter = id_list[i];
     // 💡 C++에서는 키가 없는 상태에서 [] 연산자로 맵을 조회하면 키를 만들고
     //    V타입의 기본값으로 설정하므로 다음 코드가 필요없다.
     // if (reporter_and_bad_users_map.find(reporter) ==
     //     reporter_and_bad_users_map.end()) {
     //   reporter_and_bad_users_map[reporter] = {};
     // }
-    for (const auto &bad_user : reporter_and_bad_users_map[reporter]) {
+    for (const auto& bad_user : reporter_and_bad_users_map[reporter]) {
       if (bad_user_and_reporters_map[bad_user].size() >= k) {
         answer[i]++;
       }

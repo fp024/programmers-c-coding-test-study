@@ -7,7 +7,7 @@ using namespace std;
  * [PCCE 기출문제] 5번 / 심폐소생술
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340203
  */
-vector<int> solution(const vector<string> &cpr) {
+vector<int> solution(const vector<string>& cpr) {
   vector answer = {0, 0, 0, 0, 0};
   const vector<string> basic_order = {"check", "call", "pressure",
                                       "respiration", "repeat"};

@@ -25,7 +25,7 @@ int func3(int humidity, int val_set) {
   return 0;
 }
 
-int solution(const string &mode_type, const int humidity, const int val_set) {
+int solution(const string& mode_type, const int humidity, const int val_set) {
   int answer = 0;
   if (mode_type == "auto") {
     answer = func2(humidity);

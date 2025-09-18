@@ -8,13 +8,13 @@ using namespace std;
  *   https://school.programmers.co.kr/learn/courses/30/lessons/42840
  */
 /** 📝 ===== 선언 ===== 📝 */
-vector<int> solution(const vector<int> &answers);
+vector<int> solution(const vector<int>& answers);
 
 /** 답안과 패턴을 전달 받았을 때.. 점수 계산 */
-int calc_score(const vector<int> &answer, const vector<int> &pattern);
+int calc_score(const vector<int>& answer, const vector<int>& pattern);
 
 /** 비교를 하는 규칙 함수*/
-bool compare(const pair<int, int> &a, const pair<int, int> &b) {
+bool compare(const pair<int, int>& a, const pair<int, int>& b) {
   if (a.second == b.second) {
     return a.first < b.first;
   }
@@ -22,7 +22,7 @@ bool compare(const pair<int, int> &a, const pair<int, int> &b) {
 }
 
 /** 🏗️ ===== 정의 ===== 🏗️ */
-vector<int> solution(const vector<int> &answers) {
+vector<int> solution(const vector<int>& answers) {
   vector<pair<int, int>> number_score_pairs;
 
   const vector<vector<int>> patterns = {{1, 2, 3, 4, 5},
@@ -38,7 +38,7 @@ vector<int> solution(const vector<int> &answers) {
 
   vector<int> result;
 
-  for (const auto &[number, score] : number_score_pairs) {
+  for (const auto& [number, score] : number_score_pairs) {
     // 최고 점수를 만나지 않는 순간 끝낸다.
     if (number_score_pairs[0].second != score) {
       break;
@@ -49,7 +49,7 @@ vector<int> solution(const vector<int> &answers) {
   return result;
 }
 
-int calc_score(const vector<int> &answer, const vector<int> &pattern) {
+int calc_score(const vector<int>& answer, const vector<int>& pattern) {
   int total_score = 0;
   for (int i = 0; i < answer.size(); i++) {
     if (const auto pattern_index = i % pattern.size();

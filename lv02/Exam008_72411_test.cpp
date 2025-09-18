@@ -8,15 +8,15 @@ using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
 // ✔️ 문제 해결 함수
-vector<string> solution(const vector<string> &orders,
-                        const vector<int> &course);
+vector<string> solution(const vector<string>& orders,
+                        const vector<int>& course);
 
-vector<string> combinations(const string &menu_ids, int r);
+vector<string> combinations(const string& menu_ids, int r);
 
 void calc_combinations(int idx,                       //
-                       const vector<char> &menu_ids,  //
+                       const vector<char>& menu_ids,  //
                        string result,                 //
-                       vector<string> &result_list,   //
+                       vector<string>& result_list,   //
                        int r                          //
 );
 

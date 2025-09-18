@@ -8,7 +8,7 @@ using namespace std;
 using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
-int solution(const vector<string> &friends, const vector<string> &gifts);
+int solution(const vector<string>& friends, const vector<string>& gifts);
 
 // 기본 테스트 케이스들 // cspell:disable
 TEST(Exam001_258712_Tests, Default_Test_Case01) {

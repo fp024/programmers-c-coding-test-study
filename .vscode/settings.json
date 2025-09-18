@@ -52,7 +52,8 @@
   "files.associations": {
     "chrono": "cpp",
     "functional": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "xstring": "cpp"
   },
   // 💡 Cursor + "Anysphere의 C/C++ 확장" + "clangd 확장"  환경에서 컴파일 명령어 결과를 확인하기 위한 설정
   //     빌드 디렉토리 내에 생성된 compile_commands.json가

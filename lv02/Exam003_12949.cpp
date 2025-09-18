@@ -6,8 +6,8 @@ using namespace std;
  * 행렬의 곱셈 - ✨✨
  *   https://school.programmers.co.kr/learn/courses/30/lessons/12949
  */
-vector<vector<int>> solution(const vector<vector<int>> &arr1,
-                             const vector<vector<int>> &arr2)  //
+vector<vector<int>> solution(const vector<vector<int>>& arr1,
+                             const vector<vector<int>>& arr2)  //
 {
   vector product(arr1.size(), vector<int>(arr2[0].size()));
 

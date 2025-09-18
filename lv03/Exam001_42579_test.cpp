@@ -8,7 +8,7 @@ using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
 // ✔️ 문제 해결 함수
-vector<int> solution(const vector<string> &genres, const vector<int> &plays);
+vector<int> solution(const vector<string>& genres, const vector<int>& plays);
 
 // 기본 테스트 케이스들
 TEST(Exam001_42579_Tests, Default_TestCase_01) {

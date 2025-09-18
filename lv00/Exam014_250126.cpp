@@ -7,7 +7,7 @@ using namespace std;
  * [PCCE 기출문제] 8번 / 창고 정리
  *   https://school.programmers.co.kr/learn/courses/30/lessons/250126
  */
-string solution(const vector<string> &storage, const vector<int> &num) {
+string solution(const vector<string>& storage, const vector<int>& num) {
   int num_item = 0;
   vector<string> clean_storage(storage.size());
   vector<int> clean_num(num.size());

@@ -1,8 +1,9 @@
 //
 // 공통 사용자 정의 함수 유틸리티 라이브러리
 //
-#include <stdio.h>
 #include "CommonUtils.h"
+
+#include <stdio.h>
 
 void printArray(int array[], const int length) {
   for (int i = 0; i < length; i++) {
@@ -26,8 +27,8 @@ void swap(int array[], const int aIndex, const int bIndex) {
   array[bIndex] = temp;
 }
 
-
-int getMedianIndex(const int array[], const int firstIndex, const int lastIndex) {
+int getMedianIndex(const int array[], const int firstIndex,
+                   const int lastIndex) {
   int indexArray[] = {firstIndex, (firstIndex + lastIndex) / 2, lastIndex};
 
   if (array[indexArray[0]] > array[indexArray[1]]) {

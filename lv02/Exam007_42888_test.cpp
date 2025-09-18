@@ -8,7 +8,7 @@ using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
 // ✔️ 문제 해결 함수
-vector<string> solution(const vector<string> &record);
+vector<string> solution(const vector<string>& record);
 
 // cspell:disable
 // 기본 테스트 케이스들

@@ -3,7 +3,6 @@
 
 #include <vector>
 
-
 using namespace std;
 using namespace testing;
 
@@ -58,8 +57,9 @@ TEST(Exam004_68645_Tests, Extra_TestCase_01) {
   const vector<int> result = solution(2);
   EXPECT_THAT(result, ContainerEq(  //
                           vector{
-                              1,     //
-                              2, 3,  //
+                              1,  //
+                              2,
+                              3,  //
                           }  //
                           )  //
   );

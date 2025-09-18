@@ -12,7 +12,7 @@ int solution();
 
 class Exam011_340205_Tests : public Test {
  protected:
-  std::streambuf *orig_cin = nullptr;
+  std::streambuf* orig_cin = nullptr;
 
   void SetUp() override {
     orig_cin = std::cin.rdbuf();  // 원래 stdin 저장
@@ -22,7 +22,7 @@ class Exam011_340205_Tests : public Test {
     std::cin.rdbuf(orig_cin);  // 원래 stdin 복원
   }
 
-  static void setInput(const string &input) {
+  static void setInput(const string& input) {
     static std::istringstream input_stream;
     input_stream.str(input);
     input_stream.clear();

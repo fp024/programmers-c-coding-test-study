@@ -8,10 +8,10 @@ using namespace testing;
 
 // 💡 테스트할 함수 선언 💡
 // ✔️ 문제 해결 함수
-vector<int> solution(const vector<int> &answers);
+vector<int> solution(const vector<int>& answers);
 
 // ✔️ 답변과 패턴으로 점수 계산
-int calc_score(const vector<int> &answer, const vector<int> &pattern);
+int calc_score(const vector<int>& answer, const vector<int>& pattern);
 
 TEST(Exam006_42840_Tests, Extra_TestCase_calc_score_01) {
   const vector answers = {1, 2, 3, 4, 5, 1, 2, 3, 9, 10, 1};

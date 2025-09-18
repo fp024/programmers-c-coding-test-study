@@ -6,7 +6,7 @@ using namespace std;
  * [PCCE 기출문제] 6번 / 물 부족
  *   https://school.programmers.co.kr/learn/courses/30/lessons/340202
  */
-int solution(const int storage, int usage, const vector<int> &change) {
+int solution(const int storage, int usage, const vector<int>& change) {
   int total_usage = 0;
   for (int i = 0; i < change.size(); i++) {
     usage = usage + usage * change[i] / 100;

@@ -5,7 +5,7 @@ using namespace std;
 using namespace testing;
 
 // 테스트할 함수 선언
-string solution(const string &nickname);
+string solution(const string& nickname);
 
 class Exam009_340200_Tests : public Test {
  protected:

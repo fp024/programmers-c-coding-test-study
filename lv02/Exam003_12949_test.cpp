@@ -3,14 +3,13 @@
 
 #include <vector>
 
-
 using namespace std;
 using namespace testing;
 
 /** === 💡 테스트할 함수 선언 💡 === */
 // 문제 해결 함수
-vector<vector<int>> solution(const vector<vector<int>> &arr1,
-                             const vector<vector<int>> &arr2);
+vector<vector<int>> solution(const vector<vector<int>>& arr1,
+                             const vector<vector<int>>& arr2);
 
 // 기본 테스트 케이스들
 TEST(Exam003_12949_Tests, Default_TestCase_01) {

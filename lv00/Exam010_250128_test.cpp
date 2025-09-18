@@ -8,9 +8,9 @@ using namespace std;
 using namespace testing;
 
 // 테스트할 함수 선언
-vector<string> solution(const vector<int> &numbers,
-                        const vector<int> &our_score,
-                        const vector<int> &score_list);
+vector<string> solution(const vector<int>& numbers,
+                        const vector<int>& our_score,
+                        const vector<int>& score_list);
 
 class Exam010_250128_Tests : public Test {
  protected:

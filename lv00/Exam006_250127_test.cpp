@@ -3,12 +3,11 @@
 
 #include <string>
 
-
 using namespace std;
 using namespace testing;
 
 // 테스트할 함수 선언
-int solution(const string &mode_type, int humidity, int val_set);
+int solution(const string& mode_type, int humidity, int val_set);
 
 class Exam006_250127_Tests : public Test {
  protected:

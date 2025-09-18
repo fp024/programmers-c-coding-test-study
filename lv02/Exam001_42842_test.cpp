@@ -4,7 +4,6 @@
 #include <utility>
 #include <vector>
 
-
 using namespace std;
 using namespace testing;
 
@@ -13,7 +12,7 @@ using namespace testing;
 vector<int> solution(int brown, int yellow);
 
 // 약수 쌍을 구하는 헬퍼 함수 선언
-vector<pair<int, int> > getDivisorPairs(int n);
+vector<pair<int, int>> getDivisorPairs(int n);
 
 // 기본 테스트 케이스들
 TEST(Exam002_42842_Tests, Default_TestCase_01) {
@@ -33,7 +32,7 @@ TEST(Exam002_42842_Tests, Default_TestCase_03) {
 
 // 약수 쌍 함수 테스트
 TEST(Exam002_42842_Tests, GetDivisorPairs_TestCase_01) {
-  const vector<pair<int, int> > result = getDivisorPairs(24);
-  const vector<pair<int, int> > expected = {{24, 1}, {12, 2}, {8, 3}, {6, 4}};
+  const vector<pair<int, int>> result = getDivisorPairs(24);
+  const vector<pair<int, int>> expected = {{24, 1}, {12, 2}, {8, 3}, {6, 4}};
   EXPECT_THAT(result, ContainerEq(expected));
 }
