@@ -5,14 +5,32 @@
     "/cspell.json",
     "/bin/**",
     "/build/**",
+    "**/build/**", // 하위 경로의 build까지 무시
+    "**/cmake-build-*/**", // CLion 등
     "/.vscode/**",
     "/.idea/**",
     "/.gitignore",
     "/CMakePresets.json",
     "CMakeLists.txt",
-    "/toolchain.cmake"
+    "/toolchain.cmake",
+    "**/out/**",
+    "**/_build/**",
+    "/compile_commands.json"
   ],
-  "words": ["clangd", "combi", "ctest", "gtest", "PCCE"],
+  "words": [
+    "clangd",
+    "combi",
+    "ctest",
+    "endlocal",
+    "errorlevel",
+    "gtest",
+    "PCCE",
+    "popd",
+    "pushd",
+    "setlocal",
+    "usebackq",
+    "Werror"
+  ],
   "ignoreWords": [],
   "import": []
 }

@@ -1,6 +1,6 @@
 {
   // 포멧터 설정
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "C_Cpp.clang_format_path": "C:/LLVM/21.x/bin/clang-format.exe",
   "C_Cpp.clang_format_style": "file",
   // CMake 경로 설정
