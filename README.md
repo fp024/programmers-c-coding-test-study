@@ -126,3 +126,27 @@
   
   C:\git\programmers-c-coding-test-study\build>
   ```
+
+
+
+## 코드 포멧팅 (clang-format)
+
+VSCode 설정도 이미 settings.json에 해두었지만, 프로젝트 루트에 전체 포멧팅을 하는 배치 파일을 추가했다.
+
+* 배치 파일: [run-clang-format.bat](run-clang-format.bat)
+* 설정 파일: [settings.properties](settings.properties)
+
+```bash
+# 전체 코드 포멧팅 수행 (대상 디렉토리는 settings.profiles에 설정되어있음)
+run-clang-format.bat
+
+# 특정 디렉토리 코드 포멧팅
+run-clang-format.bat lv01 lv02
+
+# 검사 모드
+run-clang-format.bat --check
+
+# 특정 디렉토리 검사
+run-clang-format.bat --check lv01 lv02
+```
+

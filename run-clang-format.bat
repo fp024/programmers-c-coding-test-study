@@ -10,7 +10,7 @@ set "DIRS="
 set "EXTS="
 
 rem 2) settings.properties 읽기
-set "SETTINGS_FILE=%ROOT%\settings.properties"
+set "SETTINGS_FILE=%ROOT%settings.properties"
 if exist "%SETTINGS_FILE%" (
   for /f "usebackq tokens=1,* delims== eol=#" %%A in ("%SETTINGS_FILE%") do (
     if /i "%%~A"=="CLANG_FORMAT_PATH" set "CF_EXE=%%~B"
@@ -28,7 +28,7 @@ set "FLAGS=-i"
 set "MODE=apply"
 set "DIRS_ARGS="
 
-:argloop
+:arg_loop
 if "%~1"=="" goto after_args
 if /i "%~1"=="--check" (
   set "FLAGS=--dry-run -Werror"
@@ -37,7 +37,7 @@ if /i "%~1"=="--check" (
   if defined DIRS_ARGS (set "DIRS_ARGS=%DIRS_ARGS% %~1") else (set "DIRS_ARGS=%~1")
 )
 shift
-goto argloop
+goto arg_loop
 
 :after_args
 if defined DIRS_ARGS set "DIRS=%DIRS_ARGS%"
@@ -82,7 +82,7 @@ for %%D in (%DIRS%) do (
   if exist "%ROOT%%%D" (
     echo [Dir] %%D
     set "STYLE_OPT="
-    if exist "%ROOT%\.clang-format" set "STYLE_OPT=-style=file"
+    if exist "%ROOT%.clang-format" set "STYLE_OPT=-style=file"
 
     pushd "%ROOT%%%D" >nul
     for %%E in (%EXTS%) do (
