@@ -62,80 +62,72 @@ set(COMMON_LIB_PROJECT CommonUtils)
 set(COMMON_LIB_NAME ${COMMON_LIB_PROJECT})
 add_subdirectory(CommonUtils)
 
-# 테스트 빌드 옵션
-option(BUILD_TESTING "Build tests with Google Test" ON)
+# Google Test 설정
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG v1.17.0
+)
 
-# Google Test 설정 (테스트가 활성화된 경우에만)
-if (BUILD_TESTING)
-    include(FetchContent)
-    FetchContent_Declare(
-            googletest
-            GIT_REPOSITORY https://github.com/google/googletest.git
-            GIT_TAG v1.17.0
+# Google Test의 설정이 우리 프로젝트에 영향주지 않도록
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+# 💡 gmock을 같이 빌드한다. gmock에서 제공되는 matcher가 다양함.
+set(BUILD_GMOCK ON CACHE BOOL "" FORCE)
+set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
+
+# GoogleTest 빌드 후 경고 억제 설정
+foreach(tgt gtest gtest_main gmock gmock_main)
+    if(TARGET ${tgt})
+        target_compile_options(${tgt} PRIVATE -Wno-character-conversion)
+    endif()
+endforeach()
+
+enable_testing()
+
+message(STATUS "Google Test enabled for testing")
+
+# 테스트 이름 생성 함수
+function(get_test_target_name LEVEL PROBLEM_ID OUTPUT_VAR)
+    set(${OUTPUT_VAR} "lv${LEVEL}_${PROBLEM_ID}_test" PARENT_SCOPE)
+endfunction()
+
+# CommonUtils 연결 함수
+function(link_common_utils LEVEL PROBLEM_ID)
+    get_test_target_name(${LEVEL} ${PROBLEM_ID} TARGET_NAME)
+    target_include_directories(${TARGET_NAME} PRIVATE ../${COMMON_LIB_PROJECT})
+    target_link_libraries(${TARGET_NAME} ${COMMON_LIB_NAME})
+endfunction()
+
+
+# 테스트 파일 설정 추가를 위한 공통 함수
+function(add_coding_test LEVEL PROBLEM_ID EXTENSION)
+    get_test_target_name(${LEVEL} ${PROBLEM_ID} TEST_NAME)
+    set(TEST_SOURCE_FILE "${PROBLEM_ID}_test.cpp")
+    set(TARGET_SOURCE_FILE "${PROBLEM_ID}.${EXTENSION}")
+
+    add_executable(${TEST_NAME}
+            ${TEST_SOURCE_FILE}
+            ${TARGET_SOURCE_FILE}
     )
 
-    # Google Test의 설정이 우리 프로젝트에 영향주지 않도록
-    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-    # 💡 gmock을 같이 빌드한다. gmock에서 제공되는 matcher가 다양함.
-    set(BUILD_GMOCK ON CACHE BOOL "" FORCE)
-    set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
-
-    FetchContent_MakeAvailable(googletest)
-    
-    # GoogleTest 빌드 후 경고 억제 설정
-    foreach(tgt gtest gtest_main gmock gmock_main)
-        if(TARGET ${tgt})
-            target_compile_options(${tgt} PRIVATE -Wno-character-conversion)
-        endif()
-    endforeach()
-
-    enable_testing()
-
-    message(STATUS "Google Test enabled for testing")
-
-    # 테스트 이름 생성 함수
-    function(get_test_target_name LEVEL PROBLEM_ID OUTPUT_VAR)
-        set(${OUTPUT_VAR} "lv${LEVEL}_${PROBLEM_ID}_test" PARENT_SCOPE)
-    endfunction()
-
-    # CommonUtils 연결 함수
-    function(link_common_utils LEVEL PROBLEM_ID)
-        get_test_target_name(${LEVEL} ${PROBLEM_ID} TARGET_NAME)
-        target_include_directories(${TARGET_NAME} PRIVATE ../${COMMON_LIB_PROJECT})
-        target_link_libraries(${TARGET_NAME} ${COMMON_LIB_NAME})
-    endfunction()
-
-
-    # 테스트 파일 설정 추가를 위한 공통 함수
-    function(add_coding_test LEVEL PROBLEM_ID EXTENSION)
-        get_test_target_name(${LEVEL} ${PROBLEM_ID} TEST_NAME)
-        set(TEST_SOURCE_FILE "${PROBLEM_ID}_test.cpp")
-        set(TARGET_SOURCE_FILE "${PROBLEM_ID}.${EXTENSION}")
-
-        add_executable(${TEST_NAME}
-                ${TEST_SOURCE_FILE}
-                ${TARGET_SOURCE_FILE}
-        )
-
-        # gtest 라이브러리 링크
-        target_link_libraries(${TEST_NAME}
-                gtest gtest_main gmock gmock_main
-        )
-
-        add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-    endfunction()
-
-endif ()
-
-# 전체 테스트 실행을 위한 커스텀 타겟 (테스트가 활성화된 경우에만)
-if (BUILD_TESTING)
-    add_custom_target(run_all_tests
-            COMMAND ${CMAKE_CTEST_COMMAND} --verbose --output-on-failure
-            COMMENT "Running all tests"
-            USES_TERMINAL
+    # gtest 라이브러리 링크
+    target_link_libraries(${TEST_NAME}
+            gtest gtest_main gmock gmock_main
     )
-endif ()
+
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endfunction()
+
+# 전체 테스트 실행을 위한 커스텀 타겟
+add_custom_target(run_all_tests
+        COMMAND ${CMAKE_CTEST_COMMAND} --verbose --output-on-failure
+        COMMENT "Running all tests"
+        USES_TERMINAL
+)
 
 # 각 레벨별 하위 디렉토리 추가, 빌드가 필요없을 경우 주석으로 둔다.
 add_subdirectory(lv00)
