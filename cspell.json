@@ -26,6 +26,7 @@
     "gtest",
     "PCCE",
     "popd",
+    "Prac",
     "pushd",
     "setlocal",
     "usebackq",
