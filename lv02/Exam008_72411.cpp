@@ -13,7 +13,7 @@ using namespace std;
 vector<string> solution(const vector<string>& orders,
                         const vector<int>& course);
 
-vector<string> combinations(const string& menu_ids, int r);
+vector<string> combinations(string_view menu_ids, int r);
 
 void calc_combinations(int idx,                       //
                        const vector<char>& menu_ids,  //
@@ -53,7 +53,7 @@ void calc_combinations(const int idx,                 //
   }
 }
 
-vector<string> combinations(const string& menu_ids, const int r) {
+vector<string> combinations(string_view menu_ids, const int r) {
   if (r <= 0 || r > static_cast<int>(menu_ids.size())) {
     return {};  // 빈 벡터 반환
   }

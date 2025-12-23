@@ -11,7 +11,7 @@ using namespace testing;
 vector<string> solution(const vector<string>& orders,
                         const vector<int>& course);
 
-vector<string> combinations(const string& menu_ids, int r);
+vector<string> combinations(string_view menu_ids, int r);
 
 void calc_combinations(int idx,                       //
                        const vector<char>& menu_ids,  //
