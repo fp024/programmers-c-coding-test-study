@@ -61,6 +61,8 @@
   //     아래 설정은 가이드용으로만 남겨둔다.
   // "clangd.arguments": ["--compile-commands-dir=build/windows-clang"],
   //
+  // 💡 SonarLint가 C/C++ 분석 시 컴파일 데이터베이스를 참조하도록 설정
+  "sonarlint.pathToCompileCommands": "${workspaceFolder}/compile_commands.json",
   // 💡 clangd 경로 설정
   //     VSCode에서는 clangd를 설치하지 않아 적용되지 않는다. 일단은 clangd는 Cursor 환경에서만 사용해보자!
   "clangd.path": "C:/LLVM/21.x/bin/clangd.exe"
