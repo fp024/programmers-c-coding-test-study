@@ -82,7 +82,10 @@ FetchContent_MakeAvailable(googletest)
 # GoogleTest 빌드 후 경고 억제 설정
 foreach(tgt gtest gtest_main gmock gmock_main)
     if(TARGET ${tgt})
-        target_compile_options(${tgt} PRIVATE -Wno-character-conversion)
+        if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+            # GCC: character-conversion 경고 억제
+            target_compile_options(${tgt} PRIVATE -Wno-character-conversion)
+        endif()
     endif()
 endforeach()
 
