@@ -18,19 +18,31 @@
     "/compile_commands.json"
   ],
   "words": [
+    "advapi",
     "clangd",
     "combi",
+    "cppwinrt",
     "ctest",
     "endlocal",
     "errorlevel",
+    "gdwarf",
     "gtest",
+    "imsvc",
+    "libpath",
+    "MSVC",
+    "msvcrtd",
+    "oldnames",
     "PCCE",
+    "penv",
     "popd",
     "Prac",
     "pushd",
     "setlocal",
+    "ucrt",
     "usebackq",
-    "Werror"
+    "Werror",
+    "winrt",
+    "WINSDK"
   ],
   "ignoreWords": [],
   "import": []

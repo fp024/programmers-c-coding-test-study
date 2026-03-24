@@ -13,9 +13,7 @@
       "description": "LLVM + Clang + Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_CXX_FLAGS": "-Wno-unused-result",
-        "CMAKE_CXX_FLAGS_DEBUG": "-O0 -g -gdwarf-3"
+        "CMAKE_BUILD_TYPE": "Debug"
       },
       "toolchainFile": "${sourceDir}/toolchains/${presetName}.cmake"
     },
