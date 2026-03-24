@@ -42,7 +42,8 @@
     "usebackq",
     "Werror",
     "winrt",
-    "WINSDK"
+    "WINSDK",
+    "SonarQube"
   ],
   "ignoreWords": [],
   "import": []
