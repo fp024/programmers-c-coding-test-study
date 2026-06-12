@@ -15,9 +15,7 @@ set(NINJA_ROOT "C:/Ninja/latest" CACHE PATH "Path to Ninja root")
 # 💡 표준 라이브러리 못찾는 빌드 오류가 발생할 경우 ...
 # C:\MSVC_2026_ROOT\Tools\MSVC 경로에 가서 버전번호를 확인해준다.
 # 최신 버전을 쓸 경우 Visual Studio Installer가 업데이트 중일 때는 ...
-# 제대로 동작하지 않을 수 있어서, 이전 버전을 사용하는 것이 나을 수도 있다.
-# 2026년 6월 13일 기준 14.51.36231가 최신이였는데, 이 버전을 쓰면 빌드 문제가 생겼다.
-# 그래서 이전 버전인 14.44.35207을 사용하도록 설정했다.
-set(MSVC_TOOLS_ROOT "C:/MSVC_2026_ROOT/Tools/MSVC/14.44.35207" CACHE PATH "Path to MSVC Tools Root")
+# 제대로 동작하지 않을 수 있어서, Visual Studio Installer가 업데이트 완료된 후에 사용하는 것이 좋다.
+set(MSVC_TOOLS_ROOT "C:/MSVC_2026_ROOT/Tools/MSVC/14.51.36231" CACHE PATH "Path to MSVC Tools Root")
 set(WINSDK_LIB_ROOT "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0" CACHE PATH "Path to Windows SDK Lib Root")
 set(WINSDK_INCLUDE_ROOT "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0" CACHE PATH "Path to Windows SDK Include Root")
