@@ -29,6 +29,7 @@
     "gtest",
     "imsvc",
     "libpath",
+    "LLDB",
     "MSVC",
     "msvcrtd",
     "oldnames",
@@ -38,12 +39,12 @@
     "Prac",
     "pushd",
     "setlocal",
+    "SonarQube",
     "ucrt",
     "usebackq",
     "Werror",
     "winrt",
-    "WINSDK",
-    "SonarQube"
+    "WINSDK"
   ],
   "ignoreWords": [],
   "import": []
