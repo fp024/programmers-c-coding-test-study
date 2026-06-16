@@ -16,6 +16,7 @@ set(NINJA_ROOT "C:/Ninja/latest" CACHE PATH "Path to Ninja root")
 # C:\MSVC_2026_ROOT\Tools\MSVC 경로에 가서 버전번호를 확인해준다.
 # 최신 버전을 쓸 경우 Visual Studio Installer가 업데이트 중일 때는 ...
 # 제대로 동작하지 않을 수 있어서, Visual Studio Installer가 업데이트 완료된 후에 사용하는 것이 좋다.
+# 그래도 문제가 생기면, build 폴더를 지우고 다시 빌드를 시도해본다.
 set(MSVC_TOOLS_ROOT "C:/MSVC_2026_ROOT/Tools/MSVC/14.51.36231" CACHE PATH "Path to MSVC Tools Root")
 set(WINSDK_LIB_ROOT "C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0" CACHE PATH "Path to Windows SDK Lib Root")
 set(WINSDK_INCLUDE_ROOT "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0" CACHE PATH "Path to Windows SDK Include Root")
